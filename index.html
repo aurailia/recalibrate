@@ -15,7 +15,7 @@
        Leave it as none to use just the lavender gradient.
        ============================================================ */
     --bg-image:url('background.jpg');
-    --bg-opacity:0.4;
+    --bg-opacity:1;
 
     --white:#fbfaff;--lav-mist:#f3eefc;--lav-light:#e6dcf7;--lavender:#c9b8ec;
     --lav-deep:#a98fd8;--amethyst:#8a5fc7;--amethyst-deep:#6f47ad;--plum-ink:#4a356e;--grape:#5b3f87;
@@ -27,7 +27,7 @@
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{font-family:var(--font-body);color:var(--ink);line-height:1.7;min-height:100vh;
-    background:linear-gradient(165deg,#f4eefb 0%,#ece3f8 30%,#e8e0f6 60%,#f1eafb 100%);
+    background:linear-gradient(165deg,rgba(244,238,251,.55) 0%,rgba(236,227,248,.5) 30%,rgba(232,224,246,.5) 60%,rgba(241,234,251,.55) 100%);
     position:relative;overflow-x:hidden}
 
   .bg-photo{position:fixed;inset:0;z-index:-3;background-image:var(--bg-image,none);
@@ -69,7 +69,9 @@
   .meter span{display:block;height:100%;width:0;border-radius:100px;background:linear-gradient(90deg,var(--lav-deep),var(--amethyst),var(--lavender));transition:width .8s ease}
   .meter-label{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);margin-top:10px}
 
-  .path{position:sticky;top:28px;padding:8px 0}
+  .path{position:sticky;top:28px;padding:22px 18px;border-radius:24px;
+    background:linear-gradient(170deg,rgba(255,255,255,.7),rgba(248,243,253,.66));
+    border:1px solid var(--glass-line);box-shadow:0 20px 50px -30px rgba(91,63,135,.4)}
   .path-title{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 20px 14px;font-weight:600}
   .nodes{list-style:none;position:relative}
   .nodes::before{content:"";position:absolute;left:19px;top:8px;bottom:8px;width:2px;background:linear-gradient(to bottom,var(--lav-deep),var(--lavender),rgba(201,184,236,.3))}

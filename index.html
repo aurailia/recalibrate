@@ -34,7 +34,7 @@ body{
   /* ====== BACKGROUND IMAGE ======
      Paste your image URL between the url('') quotes below.
      Leave it empty to use the soft lavender gradient fallback. */
-  --bg-image:url('');
+  --bg-image:url('background.jpg');
   background:#d9cdee;
   background-image:
     /* light lavender veil ON TOP of your image (keeps it bright + airy) */
@@ -64,6 +64,7 @@ body::before{
 }
 
 .wrap{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:0 28px 80px}
+#confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:999}
 
 /* ---------- HEADER (sticky, dark frosted band) ---------- */
 header.masthead{
@@ -317,6 +318,7 @@ main.stage{
 .teach-video{margin:0 0 26px}
 
 /* numbered ritual steps */
+.ritual-intro{font-family:var(--sans);font-size:15px;line-height:1.55;color:var(--lavender-soft);font-style:italic;margin-bottom:14px}
 .ritual{list-style:none;margin:0 0 26px;padding:0;counter-reset:none}
 .ritual li{display:flex;gap:16px;padding:16px 0;border-top:1px solid rgba(185,168,224,0.14);
   font-family:var(--sans);font-size:16px;line-height:1.6;color:var(--text)}
@@ -334,6 +336,11 @@ main.stage{
   font-family:var(--serif);font-style:italic;font-size:18px;color:var(--text-soft);
   background:rgba(185,168,224,0.08);border-left:3px solid var(--lavender);
   border-radius:0 12px 12px 0;padding:16px 20px;
+}
+.ground-note{
+  font-family:var(--sans);font-size:14.5px;line-height:1.6;color:var(--text-soft);
+  background:rgba(185,168,224,0.06);border:1px dashed rgba(185,168,224,0.28);
+  border-radius:14px;padding:16px 20px;margin-bottom:18px;
 }
 
 /* notice callout (teaching) */
@@ -422,9 +429,10 @@ main.stage{
 
 /* loom video embed */
 .video-frame{
-  position:relative;width:100%;padding-bottom:56.25%;height:0;
+  position:relative;width:100%;padding-bottom:var(--vid-ratio, 56.25%);height:0;
   border-radius:18px;overflow:hidden;margin-bottom:30px;
   box-shadow:0 16px 40px rgba(0,0,0,0.35);border:1px solid rgba(185,168,224,0.25);
+  background:#000;
 }
 .video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 
@@ -493,6 +501,7 @@ main.stage{
 </style>
 </head>
 <body>
+<canvas id="confetti"></canvas>
 <div class="wrap">
 
   <header class="masthead">
@@ -582,7 +591,7 @@ PHASES[0].days[0] = {
   sub:"Get clear on the life you're calling in, then send it into something you can hold.",
   tabs:[
     {id:"teaching", label:"The Teaching", icon:"✦", content:`
-      <div class="video-frame teach-video"><iframe src="https://www.youtube.com/embed/E-_LBpFHMbM" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe></div>
+      <div class="video-frame teach-video" style="--vid-ratio:66.67%"><iframe src="https://www.loom.com/embed/39b700ee7e8b4f429054d40538f2d617" allowfullscreen allow="autoplay; fullscreen; picture-in-picture"></iframe></div>
       <ul class="chapters">
         <li><span class="chap-time">0:00</span><span class="chap-label">Welcome and set your intention</span></li>
         <li><span class="chap-time">0:40</span><span class="chap-label">Connect to your highest self</span></li>
@@ -645,6 +654,76 @@ PHASES[0].days[0] = {
         <p>I am adventure. I am peace. I am harmony.</p>
         <p>I am worthy because I am.</p>
         <p class="affirm-seal">And so it is.</p>
+      </div>`}
+  ]
+};
+
+/* ---- Day 2 — Soul Recalibration ---- */
+PHASES[0].days[1] = {
+  n:2, name:"Soul Recalibration",
+  title:"Soul Recalibration",
+  sub:"Clear what's weighing on you, and make space for your magic to come through.",
+  tabs:[
+    {id:"teaching", label:"The Teaching", icon:"✦", content:`
+      <div class="body-copy">
+        <p>I'm already feeling the vibration rising. So many of you have shared what it felt like to connect with your highest timeline, and it should feel that good. That's you remembering what you're capable of.</p>
+        <p>Today we clear the energy that's been holding you back. The stress, the doubt, the limiting beliefs that sit heavy on you and keep the life you know you deserve just out of reach. We take the energy you touched in the Highest Timeline meditation, and we make room for more of it.</p>
+        <p>Over the next few days we move into gratitude and love. When you're in that energy, there's no space left for the negative stuff. It just can't fit. And as you practice feeling the gratitude that's already around you, your magnetic field grows and starts pulling in everything that supports your dreams.</p>
+      </div>
+      <div class="notice">
+        <div class="notice-label">Today's reminder</div>
+        <p>You're an infinite soul. A spiritual being having a human experience. You're source light. You've lived many lifetimes, and you carry the skills and talents of every one of them into this one. When you let go of what's holding you back, you make space for your magic to come through.</p>
+      </div>
+      <div class="pullquote"><p>When you let go of what's holding you back, you make space for your magic to come through.</p></div>
+      <div class="body-copy">
+        <p>Here's why we clear before we build. You can't pour gratitude into a cup that's already full of old stress. There's no room. So today we empty it. We let go of the doubt and the heaviness first, so that when we move into love and gratitude over the next few days, there's actual space for it to land and grow.</p>
+        <p>Clearing isn't about forcing anything out. It's about loosening your grip on the stuff you've been holding so tightly. You set it down. That's it. And what rushes in to fill the space is the version of you that was underneath it all along.</p>
+      </div>
+      <div class="notice">
+        <div class="notice-label">Notice this</div>
+        <p>Release doesn't always feel like relief at first. Sometimes letting go of an old belief feels like grief, because it's been with you a long time, even when it hurt you. If something stirs up during the meditation, let it move. You don't have to hold it together. The feeling moving through you is the clearing working.</p>
+      </div>`},
+    {id:"practice", label:"The Practice", icon:"🌙", content:`
+      <div class="body-copy">
+        <p>Today you connect with your inner being and let go of everything that's holding you back. Then you move into the energy of love and gratitude, because that's a big part of how we raise frequency and recalibrate.</p>
+      </div>
+      <div class="audio-player">
+        <button class="play-btn" id="audPlay" aria-label="Play meditation">${'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>'}</button>
+        <div class="audio-body">
+          <div class="audio-head">
+            <span class="audio-label">Soul Recalibration Meditation</span>
+            <span class="audio-time"><span id="audCur">0:00</span> / <span id="audDur">--:--</span></span>
+          </div>
+          <div class="audio-title">Press play and let me guide you</div>
+          <div class="audio-track" id="audTrack"><div class="audio-fill" id="audFill"></div></div>
+        </div>
+        <audio id="audEl" preload="metadata" src="https://www.dropbox.com/scl/fi/rc7ae9mwgs0twaosp5bau/Soul-Recalibration-Meditation.m4a?rlkey=x33axytipnwgbbidt3923bzyf&raw=1"></audio>
+      </div>
+      <p class="ritual-intro">Two rituals start today. Both run every day for the rest of the challenge, and beyond if you feel called.</p>
+      <ol class="ritual">
+        <li><span class="ritual-n">1</span><div><strong>Every morning, your crystal.</strong> When you wake up, grab the stone you charged on Day 1. Close your eyes and picture the life you're creating. Connect with your highest timeline. Tune into the energy you sealed into it. The key is connecting with the vision first thing, and again through the day whenever you feel called.</div></li>
+        <li><span class="ritual-n">2</span><div><strong>Every night, your gratitude.</strong> Before bed, think of the best thing that happened that day. Close your eyes and tune into the feeling of it. Say <em>thank you, thank you, thank you</em> and really let the gratitude land in your body.</div></li>
+      </ol>
+      <div class="ground-note">Don't overthink these. The morning one can take 30 seconds. The night one can be one small good thing, the coffee, a text, the way the light hit. You're not performing gratitude, you're practicing tuning to it. Consistency matters more than length.</div>
+      <div class="share-note">If you feel called, share how this one lands for you inside the community. I'd love to hear it.</div>`},
+    {id:"reflect", label:"Reflect", icon:"🪞", content:`
+      <div class="body-copy">
+        <p>Letting go starts with naming what you're carrying. Be honest. No one's reading this but you.</p>
+      </div>
+      <div class="prompt-card">
+        <div class="prompt-q">What are you ready to release? The belief, the story, the fear that's been weighing on you and taking up the space your magic wants. Name it. Then write what becomes possible once it's gone.</div>
+        <textarea class="journal" data-journal="d2-release" placeholder="Start writing. This saves on its own."></textarea>
+        <div class="journal-saved" data-saved="d2-release"></div>
+      </div>`},
+    {id:"affirm", label:"Affirmation", icon:"✶", content:`
+      <div class="affirmation">
+        <p>I am grateful for the life that has been given to me.</p>
+        <p>I am pure love.</p>
+        <p>Love is always around me.</p>
+        <p>Love is who I am. It is at the core of everything.</p>
+        <p>It is safe to love. It is safe to be loved.</p>
+        <p>It is safe to feel love. It is safe to allow love.</p>
+        <p class="affirm-seal">Love is who I am.</p>
       </div>`}
   ]
 };
@@ -780,7 +859,7 @@ function renderStage(){
         ${markPill}
       </div>
       ${d.sub?`<div class="day-sub">${d.sub}</div>`:''}
-      <div class="video-frame"><iframe src="${d.loom}" allowfullscreen allow="autoplay; fullscreen; picture-in-picture"></iframe></div>
+      <div class="video-frame" style="--vid-ratio:66.67%"><iframe src="${d.loom}" allowfullscreen allow="autoplay; fullscreen; picture-in-picture"></iframe></div>
       <div class="tabs">${tabBtnsW}</div>
       ${panelsW}
       ${footNav(d)}`;
@@ -947,12 +1026,78 @@ function footNav(d){
     <button class="nav-btn" data-next ${nextOk?'':'disabled'}>${nextLabel}</button>
   </div>`;
 }
+/* ---- purple & lavender confetti on completing a day ---- */
+const CONFETTI_COLORS = ['#9d86c9','#b9a8e0','#c9b8ec','#8d76bf','#d7cdee','#7c64a8','#e8c87a'];
+let _confettiPieces=[], _confettiRAF=null, _confettiCanvas=null, _confettiCtx=null;
+function _confettiResize(){
+  if(!_confettiCanvas) return;
+  const dpr=window.devicePixelRatio||1;
+  _confettiCanvas.width=window.innerWidth*dpr;
+  _confettiCanvas.height=window.innerHeight*dpr;
+  _confettiCtx.setTransform(dpr,0,0,dpr,0,0);
+}
+function fireConfetti(x,y){
+  if(!_confettiCanvas){
+    _confettiCanvas=document.getElementById('confetti');
+    _confettiCtx=_confettiCanvas.getContext('2d');
+    _confettiResize();
+    window.addEventListener('resize',_confettiResize);
+  }
+  const cx=(x==null)?window.innerWidth/2:x;
+  const cy=(y==null)?window.innerHeight/2:y;
+  for(let i=0;i<90;i++){
+    const ang=Math.random()*Math.PI*2;
+    const speed=4+Math.random()*7;
+    _confettiPieces.push({
+      x:cx, y:cy,
+      vx:Math.cos(ang)*speed,
+      vy:Math.sin(ang)*speed-4,
+      g:0.18+Math.random()*0.1,
+      size:5+Math.random()*6,
+      rot:Math.random()*Math.PI,
+      vr:(Math.random()-0.5)*0.3,
+      color:CONFETTI_COLORS[(Math.random()*CONFETTI_COLORS.length)|0],
+      life:0, ttl:70+Math.random()*40,
+      shape:Math.random()<0.5?'rect':'circ'
+    });
+  }
+  if(!_confettiRAF) _confettiRAF=requestAnimationFrame(_confettiTick);
+}
+function _confettiTick(){
+  _confettiCtx.clearRect(0,0,_confettiCanvas.width,_confettiCanvas.height);
+  for(let i=_confettiPieces.length-1;i>=0;i--){
+    const p=_confettiPieces[i];
+    p.life++; p.vy+=p.g; p.x+=p.vx; p.y+=p.vy; p.rot+=p.vr; p.vx*=0.99;
+    const alpha=Math.max(0,1-p.life/p.ttl);
+    _confettiCtx.save();
+    _confettiCtx.globalAlpha=alpha;
+    _confettiCtx.translate(p.x,p.y);
+    _confettiCtx.rotate(p.rot);
+    _confettiCtx.fillStyle=p.color;
+    if(p.shape==='rect') _confettiCtx.fillRect(-p.size/2,-p.size/2,p.size,p.size*0.55);
+    else { _confettiCtx.beginPath(); _confettiCtx.arc(0,0,p.size/2,0,Math.PI*2); _confettiCtx.fill(); }
+    _confettiCtx.restore();
+    if(p.life>=p.ttl||p.y>window.innerHeight+40) _confettiPieces.splice(i,1);
+  }
+  if(_confettiPieces.length) _confettiRAF=requestAnimationFrame(_confettiTick);
+  else { _confettiRAF=null; _confettiCtx.clearRect(0,0,_confettiCanvas.width,_confettiCanvas.height); }
+}
+
 function bindFoot(d){
   const stage=document.getElementById('stage');
   const prev=stage.querySelector('[data-prev]'), next=stage.querySelector('[data-next]'), mark=stage.querySelector('[data-mark]');
   if(prev) prev.onclick=()=>{ if(d.n>0){current=d.n-1;openPhaseFor(current);renderStage();renderPath();window.scrollTo({top:0,behavior:'smooth'});} };
   if(next) next.onclick=()=>{ if(d.n<21){current=d.n+1;openPhaseFor(current);renderStage();renderPath();window.scrollTo({top:0,behavior:'smooth'});} };
-  if(mark) mark.onclick=()=>{ progress[d.n]=!progress[d.n]; saveProgress(progress); renderStage(); renderPath(); };
+  if(mark) mark.onclick=()=>{
+    const wasDone=!!progress[d.n];
+    progress[d.n]=!progress[d.n];
+    saveProgress(progress);
+    if(!wasDone){
+      const r=mark.getBoundingClientRect();
+      fireConfetti(r.left+r.width/2, r.top+r.height/2);
+    }
+    renderStage(); renderPath();
+  };
 }
 function openPhaseFor(n){
   PHASES.forEach((ph,pi)=>{ if(ph.days.some(d=>d.n===n)) collapsed[pi]=false; });

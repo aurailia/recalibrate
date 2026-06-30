@@ -66,6 +66,67 @@ body::before{
 .wrap{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:0 28px 80px}
 #confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:999}
 
+/* My Notes button + panel */
+.notes-btn{
+  display:inline-flex;align-items:center;gap:9px;
+  font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.5px;color:#fff;
+  background:linear-gradient(135deg, rgba(201,184,236,0.3), rgba(155,134,201,0.24));
+  border:1px solid rgba(185,168,224,0.4);border-radius:30px;padding:10px 20px;cursor:pointer;
+  transition:background .15s ease, transform .15s ease;
+}
+.notes-btn:hover{background:linear-gradient(135deg, rgba(201,184,236,0.45), rgba(155,134,201,0.38));transform:translateY(-1px)}
+.notes-btn svg{width:16px;height:16px}
+.notes-overlay{
+  position:fixed;inset:0;background:rgba(12,8,23,0.6);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);
+  opacity:0;visibility:hidden;transition:opacity .25s ease, visibility .25s ease;z-index:1000;
+}
+.notes-overlay.open{opacity:1;visibility:visible}
+.notes-panel{
+  position:fixed;top:0;right:0;height:100%;width:min(480px,92vw);z-index:1001;
+  background:linear-gradient(165deg, #241a3c 0%, #1b1333 100%);
+  border-left:1px solid rgba(185,168,224,0.22);
+  box-shadow:-20px 0 60px rgba(0,0,0,0.5);
+  transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);
+  display:flex;flex-direction:column;padding:30px 30px 0;
+}
+.notes-panel.open{transform:translateX(0)}
+.notes-panel-head{display:flex;align-items:center;justify-content:space-between}
+.notes-panel-title{
+  font-family:var(--serif);font-weight:600;font-size:30px;
+  background:linear-gradient(100deg, #f3b8d8, #ceacec 50%, #b9a8e0);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;
+}
+.notes-close{
+  background:none;border:none;color:var(--text-soft);font-size:32px;line-height:1;cursor:pointer;
+  width:38px;height:38px;border-radius:50%;transition:background .15s ease,color .15s ease;
+}
+.notes-close:hover{background:rgba(185,168,224,0.14);color:#fff}
+.notes-panel-sub{font-family:var(--sans);font-size:13.5px;color:var(--text-dim);margin-top:4px}
+.notes-actions{margin:18px 0 6px}
+.notes-download{
+  width:100%;font-family:var(--sans);font-size:14.5px;font-weight:600;color:#fff;
+  background:linear-gradient(135deg,#8d76bf,#a892d4);border:none;border-radius:12px;
+  padding:14px;cursor:pointer;box-shadow:0 8px 20px rgba(141,118,191,0.4);transition:transform .15s ease;
+}
+.notes-download:hover{transform:translateY(-1px)}
+.notes-download:disabled{opacity:.4;cursor:default;transform:none}
+.notes-body{flex:1 1 auto;overflow-y:auto;margin:18px -6px 0;padding:0 6px 30px}
+.notes-day{margin-bottom:26px}
+.notes-day-title{
+  font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  color:var(--lavender);margin-bottom:4px;
+}
+.notes-day-name{font-family:var(--serif);font-weight:600;font-size:21px;color:#fff;margin-bottom:12px;line-height:1.1}
+.notes-entry{
+  background:rgba(185,168,224,0.06);border:1px solid rgba(185,168,224,0.16);border-radius:12px;
+  padding:14px 16px;margin-bottom:10px;
+}
+.notes-entry-label{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--text-dim);margin-bottom:6px}
+.notes-entry-text{font-family:var(--sans);font-size:15px;line-height:1.55;color:var(--text);white-space:pre-wrap}
+.notes-grat li{font-family:var(--sans);font-size:15px;line-height:1.5;color:var(--text);margin-bottom:8px;list-style:none}
+.notes-grat li span{color:var(--text-soft)}
+.notes-empty{font-family:var(--sans);font-size:15px;line-height:1.6;color:var(--text-soft);text-align:center;padding:40px 10px;font-style:italic}
+
 /* ---------- HEADER (sticky, dark frosted band) ---------- */
 header.masthead{
   position:sticky;top:14px;z-index:50;
@@ -342,6 +403,27 @@ main.stage{
   background:rgba(185,168,224,0.06);border:1px dashed rgba(185,168,224,0.28);
   border-radius:14px;padding:16px 20px;margin-bottom:18px;
 }
+.share-note a, .body-copy a, .ground-note a{
+  color:var(--lavender-bright);font-weight:600;text-decoration:none;
+  border-bottom:1px solid rgba(201,184,236,0.4);
+  transition:border-color .15s ease, color .15s ease;
+}
+.share-note a:hover, .body-copy a:hover, .ground-note a:hover{color:#fff;border-bottom-color:#fff}
+
+/* abraham hicks rampage card (external youtube) */
+.rampage-card{
+  background:linear-gradient(160deg, rgba(155,134,201,0.16), rgba(124,100,168,0.1));
+  border:1px solid rgba(185,168,224,0.26);border-radius:18px;
+  padding:22px 24px;margin:6px 0 26px;
+}
+.rampage-label{
+  font-family:var(--sans);font-size:13px;font-weight:700;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--lavender-soft);margin-bottom:8px;
+}
+.rampage-note{
+  font-family:var(--sans);font-size:14px;line-height:1.55;color:var(--text-soft);margin-bottom:16px;
+}
+.rampage-card .video-frame{margin-bottom:0}
 
 /* notice callout (teaching) */
 .notice{
@@ -378,6 +460,26 @@ main.stage{
   margin-top:8px;height:16px;opacity:0;transition:opacity .25s ease;letter-spacing:.5px;
 }
 .journal-saved.show{opacity:1}
+
+/* gratitude journal (5 rows: grateful for + why) */
+.gratitude-journal{display:flex;flex-direction:column;gap:14px}
+.grat-row{display:flex;gap:14px;align-items:flex-start}
+.grat-n{
+  flex:0 0 auto;width:30px;height:30px;border-radius:50%;margin-top:8px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--sans);font-weight:700;font-size:14px;color:#fff;
+  background:linear-gradient(150deg,#9079c4,#7c64a8);
+  box-shadow:0 4px 12px rgba(124,100,168,0.4);
+}
+.grat-fields{flex:1 1 auto;display:flex;flex-direction:column;gap:6px;min-width:0}
+.journal-line{
+  width:100%;background:rgba(14,10,26,0.4);border:1px solid rgba(185,168,224,0.24);
+  border-radius:12px;padding:13px 16px;color:var(--text);
+  font-family:var(--sans);font-size:15.5px;transition:border-color .15s ease;
+}
+.journal-line:focus{outline:none;border-color:var(--lavender)}
+.journal-line::placeholder{color:var(--text-dim)}
+.grat-why{min-height:46px !important;font-size:14.5px !important;color:var(--text-soft) !important}
 
 /* affirmation */
 .affirmation{
@@ -502,6 +604,18 @@ main.stage{
 </head>
 <body>
 <canvas id="confetti"></canvas>
+<div class="notes-overlay" id="notesOverlay"></div>
+<aside class="notes-panel" id="notesPanel">
+  <div class="notes-panel-head">
+    <div class="notes-panel-title">My Notes</div>
+    <button class="notes-close" id="notesClose" aria-label="Close">&times;</button>
+  </div>
+  <div class="notes-panel-sub">Everything you've written so far, gathered in one place.</div>
+  <div class="notes-actions">
+    <button class="notes-download" id="notesDownload">Download my notes</button>
+  </div>
+  <div class="notes-body" id="notesBody"></div>
+</aside>
 <div class="wrap">
 
   <header class="masthead">
@@ -515,6 +629,10 @@ main.stage{
       </div>
     </div>
     <div class="masthead-right">
+      <button class="notes-btn" id="notesBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4a2 2 0 0 1 2-2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="14" y2="17"/></svg>
+        My Notes
+      </button>
       <div class="ready-label">Begin When You're Ready</div>
     </div>
   </header>
@@ -617,16 +735,16 @@ PHASES[0].days[0] = {
         <p>Today you're recalibrating to the desires and dreams you want to bring to life. To do that, you have to get clear on what you actually want to create. This is the first step before we move into gratitude and raising your frequency.</p>
       </div>
       <div class="audio-player">
-        <button class="play-btn" id="audPlay" aria-label="Play meditation">${'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>'}</button>
+        <button class="play-btn" aria-label="Play meditation">${'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>'}</button>
         <div class="audio-body">
           <div class="audio-head">
             <span class="audio-label">Highest Timeline Meditation</span>
-            <span class="audio-time"><span id="audCur">0:00</span> / <span id="audDur">--:--</span></span>
+            <span class="audio-time"><span class="audio-cur">0:00</span> / <span class="audio-dur">--:--</span></span>
           </div>
           <div class="audio-title">Press play and let me guide you</div>
-          <div class="audio-track" id="audTrack"><div class="audio-fill" id="audFill"></div></div>
+          <div class="audio-track"><div class="audio-fill"></div></div>
         </div>
-        <audio id="audEl" preload="metadata" src="https://www.dropbox.com/scl/fi/odo572q3pmvwf0cna35g8/highest-self-embodiment-meditation.mp3?rlkey=ikhlkcruldih9quw8wolag1ww&raw=1"></audio>
+        <audio preload="metadata" src="https://www.dropbox.com/scl/fi/odo572q3pmvwf0cna35g8/highest-self-embodiment-meditation.mp3?rlkey=ikhlkcruldih9quw8wolag1ww&raw=1"></audio>
       </div>
       <ol class="ritual">
         <li><span class="ritual-n">1</span><div><strong>Find your rock or crystal.</strong> Pick one that will be the symbol of the life you're creating. It doesn't have to be fancy. It just has to mean something to you.</div></li>
@@ -634,7 +752,7 @@ PHASES[0].days[0] = {
         <li><span class="ritual-n">3</span><div><strong>Send it into the stone.</strong> Pour all the emotion and feeling of living that life into the rock, and seal it with love.</div></li>
         <li><span class="ritual-n">4</span><div><strong>Carry it for the whole 21 days.</strong> This stone is your anchor for the journey, not just today. Keep it on you, or somewhere you'll see it, and connect with it through the day even for 30 seconds. Set it by your bed at night. First thing in the morning, grab it and say <em>thank you, thank you, thank you</em> while you imagine waking up to that life. Picture the day. Feel what it feels like to have everything you desire. Stay in that feeling for a couple of minutes. Every time you touch it, you come back to the vision.</div></li>
       </ol>
-      <div class="share-note">If you feel called, share how this lands for you inside the community. I'd love to hear it.</div>`},
+      <div class="share-note">If you feel called, <a href="https://www.skool.com/embody-wealth?c=a0afd40b879a407f8c686bc5a396fea0&s=newest-cm&fl=" target="_blank" rel="noopener">share how this lands for you inside the community</a>. I'd love to hear it.</div>`},
     {id:"reflect", label:"Reflect", icon:"🪞", content:`
       <div class="body-copy">
         <p>Before you anchor it into the stone, put it into words. Don't edit. Don't make it reasonable. Write it the way you'd want it if no one was watching and nothing could go wrong.</p>
@@ -688,16 +806,16 @@ PHASES[0].days[1] = {
         <p>Today you connect with your inner being and let go of everything that's holding you back. Then you move into the energy of love and gratitude, because that's a big part of how we raise frequency and recalibrate.</p>
       </div>
       <div class="audio-player">
-        <button class="play-btn" id="audPlay" aria-label="Play meditation">${'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>'}</button>
+        <button class="play-btn" aria-label="Play meditation">${'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>'}</button>
         <div class="audio-body">
           <div class="audio-head">
             <span class="audio-label">Soul Recalibration Meditation</span>
-            <span class="audio-time"><span id="audCur">0:00</span> / <span id="audDur">--:--</span></span>
+            <span class="audio-time"><span class="audio-cur">0:00</span> / <span class="audio-dur">--:--</span></span>
           </div>
           <div class="audio-title">Press play and let me guide you</div>
-          <div class="audio-track" id="audTrack"><div class="audio-fill" id="audFill"></div></div>
+          <div class="audio-track"><div class="audio-fill"></div></div>
         </div>
-        <audio id="audEl" preload="metadata" src="https://www.dropbox.com/scl/fi/rc7ae9mwgs0twaosp5bau/Soul-Recalibration-Meditation.m4a?rlkey=x33axytipnwgbbidt3923bzyf&raw=1"></audio>
+        <audio preload="metadata" src="https://www.dropbox.com/scl/fi/rc7ae9mwgs0twaosp5bau/Soul-Recalibration-Meditation.m4a?rlkey=x33axytipnwgbbidt3923bzyf&raw=1"></audio>
       </div>
       <p class="ritual-intro">Two rituals start today. Both run every day for the rest of the challenge, and beyond if you feel called.</p>
       <ol class="ritual">
@@ -705,7 +823,7 @@ PHASES[0].days[1] = {
         <li><span class="ritual-n">2</span><div><strong>Every night, your gratitude.</strong> Before bed, think of the best thing that happened that day. Close your eyes and tune into the feeling of it. Say <em>thank you, thank you, thank you</em> and really let the gratitude land in your body.</div></li>
       </ol>
       <div class="ground-note">Don't overthink these. The morning one can take 30 seconds. The night one can be one small good thing, the coffee, a text, the way the light hit. You're not performing gratitude, you're practicing tuning to it. Consistency matters more than length.</div>
-      <div class="share-note">If you feel called, share how this one lands for you inside the community. I'd love to hear it.</div>`},
+      <div class="share-note">If you feel called, <a href="https://www.skool.com/embody-wealth?c=a0afd40b879a407f8c686bc5a396fea0&s=newest-cm&fl=" target="_blank" rel="noopener">share how this one lands for you inside the community</a>. I'd love to hear it.</div>`},
     {id:"reflect", label:"Reflect", icon:"🪞", content:`
       <div class="body-copy">
         <p>Letting go starts with naming what you're carrying. Be honest. No one's reading this but you.</p>
@@ -724,6 +842,319 @@ PHASES[0].days[1] = {
         <p>It is safe to love. It is safe to be loved.</p>
         <p>It is safe to feel love. It is safe to allow love.</p>
         <p class="affirm-seal">Love is who I am.</p>
+      </div>`}
+  ]
+};
+
+/* ---- Day 3 — Gratitude ---- */
+PHASES[0].days[2] = {
+  n:3, name:"Counting Your Blessings",
+  title:"Counting Your Blessings",
+  sub:"Gratitude is the magnetic field. This is how you build it.",
+  tabs:[
+    {id:"teaching", label:"The Teaching", icon:"✦", content:`
+      <div class="audio-player">
+        <button class="play-btn" aria-label="Play training">${'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>'}</button>
+        <div class="audio-body">
+          <div class="audio-head">
+            <span class="audio-label">Day 3 Training</span>
+            <span class="audio-time"><span class="audio-cur">0:00</span> / <span class="audio-dur">--:--</span></span>
+          </div>
+          <div class="audio-title">Press play, then read along below</div>
+          <div class="audio-track"><div class="audio-fill"></div></div>
+        </div>
+        <audio preload="metadata" src="https://www.dropbox.com/scl/fi/zjo3i2i2qapx4thl3dqj9/Day-3-recalibrate.mp3?rlkey=be4hgg1ct9zagmo1wlps8sk7p&raw=1"></audio>
+      </div>
+      <div class="body-copy">
+        <p>Today we shift into the energy of gratitude. When you combine gratitude, love, and your connection to your highest timeline, you create a magnetic field that pulls in the things, people, events, and opportunities that support that timeline. Gratitude is one of the most powerful tools I use. It looks simple, and maybe you already do it. But when you truly connect with the feeling and do this daily, the shift becomes magical.</p>
+        <p>Building my business, I've pivoted more times than I can count. Ups, downs, failures, wins. The one constant I kept noticing: when I shifted my energy to a high frequency of love and gratitude, things moved. Sales came in. People reached out. Momentum kicked in.</p>
+        <p>You've felt this. When gratitude is overflowing in your body, life feels lighter and things just happen. You make a sale. Someone lands in your DMs wanting to work with you. An unexpected check shows up. You find $20 in your jean jacket. You start seeing the glass half full, and you take action from abundance and joy instead of fear. That's what builds the beautiful life.</p>
+      </div>
+      <div class="pullquote"><p>When you're grateful for what you have, your vibration rises, and you watch those things increase.</p></div>
+      <div class="body-copy">
+        <p>Be grateful for the money you have, however little, and you'll watch it grow. Grateful for the relationship even when it's not perfect, and it gets better. Grateful for the job even when it's not what you hoped, and things start to shift so you enjoy it more.</p>
+        <p>The flipside is real too. When we talk about what we don't have, we're counting negative things. Complaining about traffic, money, other people, the long line. That increases just the same, and it cancels out the good that was already on its way. We think 60 to 70 thousand thoughts a day. How many are complaints, or thoughts about what's missing? We're human, we all have those days. But when you wake up counting blessings and connecting to your dreams, you set the whole day on a different frequency.</p>
+      </div>
+      <div class="notice">
+        <div class="notice-label">Why it works · your RAS</div>
+        <p>There's a bundle of nerves at your brainstem called the reticular activating system, your RAS. Your brain sifts billions of bits of data, and the RAS filters out the noise so the important stuff gets through. It takes whatever you focus on and builds a filter for it. It switches on the second you wake up, asking what do you want to look for today. Wake up saying I'm so tired, no money's coming in, and it filters the day for proof of exactly that. Wake up in gratitude and love, and it filters for everything that matches that instead. You're not imagining the shift. You're aiming the filter.</p>
+      </div>`},
+    {id:"practice", label:"The Practice", icon:"🌙", content:`
+      <div class="body-copy">
+        <p>First thing in the morning, listen to the Gratitude Mantra. It's short and sweet, made to set your frequency before the day pulls at you.</p>
+      </div>
+      <div class="audio-player">
+        <button class="play-btn" aria-label="Play mantra">${'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>'}</button>
+        <div class="audio-body">
+          <div class="audio-head">
+            <span class="audio-label">Gratitude Mantra</span>
+            <span class="audio-time"><span class="audio-cur">0:00</span> / <span class="audio-dur">--:--</span></span>
+          </div>
+          <div class="audio-title">Listen first thing in the morning</div>
+          <div class="audio-track"><div class="audio-fill"></div></div>
+        </div>
+        <audio preload="metadata" src="https://www.dropbox.com/scl/fi/9caaj7dia4jf4tg2fjl8u/gratitude-mantra.m4a?rlkey=vcvx97kjkrr9iow5nc5mwa8iy&raw=1"></audio>
+      </div>
+      <div class="body-copy">
+        <p>Once your mind is set to feeling good, start counting your blessings. This is the tool I use daily, and I can always tell the difference on the days I skip it.</p>
+      </div>
+      <ol class="ritual">
+        <li><span class="ritual-n">1</span><div><strong>Get a gratitude journal.</strong> A real notebook, or type it on your computer. Stay off your phone for this, it pulls your attention away from the feeling.</div></li>
+        <li><span class="ritual-n">2</span><div><strong>Write 5 things you're grateful for, and why.</strong> The why matters. It's what lets you feel it instead of just listing it.</div></li>
+        <li><span class="ritual-n">3</span><div><strong>Read them back.</strong> Out loud or in your mind, and after each one say <em>thank you, thank you, thank you</em>. Feel it land in your body. Just saying the words isn't enough. The magic is in the emotion, because that's what surges your energy and amplifies the field.</div></li>
+      </ol>
+      <p class="ritual-intro">Do this every morning for the rest of the challenge, and beyond if you feel called. Watch how your energy and your manifestations start to shift.</p>
+      <div class="ground-note">Think 5 is hard to find? Look around. The trees. Flowers. That you can see color, hear birds, walk, run. There are hundreds of things within reach right now. The list is never the problem once you start looking.</div>
+      <div class="share-note">If you feel called, <a href="https://www.skool.com/embody-wealth?c=a0afd40b879a407f8c686bc5a396fea0&s=newest-cm&fl=" target="_blank" rel="noopener">share what's on your list inside the community</a>. I'd love to hear it.</div>`},
+    {id:"reflect", label:"Reflect", icon:"🪞", content:`
+      <div class="body-copy">
+        <p>You can do today's practice right here. Five things you're grateful for, and why for each. Write it, then read it back and feel it.</p>
+      </div>
+      <div class="gratitude-journal">
+        <div class="grat-row"><span class="grat-n">1</span><div class="grat-fields"><input class="journal-line" data-journal="d3-g1" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d3-w1" placeholder="because..."></textarea></div></div>
+        <div class="grat-row"><span class="grat-n">2</span><div class="grat-fields"><input class="journal-line" data-journal="d3-g2" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d3-w2" placeholder="because..."></textarea></div></div>
+        <div class="grat-row"><span class="grat-n">3</span><div class="grat-fields"><input class="journal-line" data-journal="d3-g3" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d3-w3" placeholder="because..."></textarea></div></div>
+        <div class="grat-row"><span class="grat-n">4</span><div class="grat-fields"><input class="journal-line" data-journal="d3-g4" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d3-w4" placeholder="because..."></textarea></div></div>
+        <div class="grat-row"><span class="grat-n">5</span><div class="grat-fields"><input class="journal-line" data-journal="d3-g5" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d3-w5" placeholder="because..."></textarea></div></div>
+        <div class="journal-saved" data-saved="d3-g1"></div>
+      </div>`}
+  ]
+};
+
+/* ---- Day 4 — Receiving ---- */
+PHASES[0].days[3] = {
+  n:4, name:"Open to Receiving",
+  title:"Open to Receiving",
+  sub:"The more you practice gratitude, the wider your portal for receiving opens.",
+  tabs:[
+    {id:"teaching", label:"The Teaching", icon:"✦", content:`
+      <div class="audio-player">
+        <button class="play-btn" aria-label="Play training">${'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>'}</button>
+        <div class="audio-body">
+          <div class="audio-head">
+            <span class="audio-label">Day 4 Training</span>
+            <span class="audio-time"><span class="audio-cur">0:00</span> / <span class="audio-dur">--:--</span></span>
+          </div>
+          <div class="audio-title">Press play, then read along below</div>
+          <div class="audio-track"><div class="audio-fill"></div></div>
+        </div>
+        <audio preload="metadata" src="https://www.dropbox.com/scl/fi/9fk60a2bgbg45za2tb4ey/day-4-recalibrate.mp3?rlkey=0v5cuo7l6xzfws7e1579wvzfa&raw=1"></audio>
+      </div>
+      <div class="body-copy">
+        <p>Can you feel the gratitude settling into your body yet? So many of you are telling me your frequency is shifting, things are already manifesting, the energy is recalibrating. This is it working.</p>
+        <p>The more you practice gratitude, the wider your portal for receiving opens. You start noticing synchronicities. You start seeing the ways the Universe is already moving to support your dreams. They were always there. Gratitude is what tunes you to see them.</p>
+      </div>
+      <div class="notice">
+        <div class="notice-label">Today's reminder</div>
+        <p>You're a powerful creator, born to live free and do what you love. All your desires already exist, here and now. Your only job is to learn to allow them in. To stay on the path to your highest timeline. You're worthy of every one of them, just by being you.</p>
+      </div>
+      <div class="pullquote"><p>All your desires already exist. Your only job is to learn to allow them in.</p></div>
+      <div class="body-copy">
+        <p>Here's the shift today. The first three days were about clearing and raising your frequency. Today we add receiving. Because manifesting isn't only about sending the signal out. It's about being open enough to catch what comes back. Gratitude does both. It raises you, and it softens you into allowing.</p>
+      </div>
+      <div class="notice">
+        <div class="notice-label">Notice this</div>
+        <p>Receiving can feel harder than giving for a lot of us, especially women who are used to being the ones who hold everything together. If you notice resistance to just letting good things come without earning them first, that's the old pattern. You don't have to earn your desires. You're worthy of them by being you. Let that be uncomfortable and true at the same time.</p>
+      </div>`},
+    {id:"practice", label:"The Practice", icon:"🌙", content:`
+      <div class="body-copy">
+        <p>Today the focus stays on gratitude, love, and appreciating your life. Starting the morning in positive thought and gratitude sets you up for a high-vibration day where you can handle anything that comes.</p>
+        <p>Listen to the Day 4 training first. Then, as early in the day as you can, take it outside.</p>
+      </div>
+      <ol class="ritual">
+        <li><span class="ritual-n">1</span><div><strong>Get into nature with the Morning Rampage.</strong> Go for a walk, or just sit outside, and play the Abraham Hicks "Morning Rampage" below. No outdoor access? Sit by a window and be present with the sky. Carry your charged crystal while you listen.</div></li>
+        <li><span class="ritual-n">2</span><div><strong>Then count your blessings.</strong> After the rampage, write 5 things you're grateful for and why. Read them back, out loud or in your mind, and say <em>thank you, thank you, thank you</em> after each. Feel it in your body. You can do this in the Reflect tab.</div></li>
+        <li><span class="ritual-n">3</span><div><strong>Tonight, your gratitude.</strong> Before bed, think of the best thing that happened today. Close your eyes, tune into the feeling, and say <em>thank you, thank you, thank you</em>. Really feel it.</div></li>
+      </ol>
+      <div class="rampage-card">
+        <div class="rampage-label">▶ Abraham Hicks · Morning Rampage</div>
+        <div class="rampage-note">A rampage of appreciation to play while you're out in nature. This is Abraham Hicks' recording on YouTube.</div>
+        <div class="video-frame" style="--vid-ratio:56.25%"><iframe src="https://www.youtube.com/embed/FmczMP1gQzk" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe></div>
+      </div>
+      <div class="share-note">If you feel called, <a href="https://www.skool.com/embody-wealth?c=a0afd40b879a407f8c686bc5a396fea0&s=newest-cm&fl=" target="_blank" rel="noopener">share how the rampage landed for you inside the community</a>. I love hearing how this is shifting your energy.</div>`},
+    {id:"reflect", label:"Reflect", icon:"🪞", content:`
+      <div class="body-copy">
+        <p>Five things you're grateful for, and why for each. Write it, read it back, and let the gratitude land in your body.</p>
+      </div>
+      <div class="gratitude-journal">
+        <div class="grat-row"><span class="grat-n">1</span><div class="grat-fields"><input class="journal-line" data-journal="d4-g1" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d4-w1" placeholder="because..."></textarea></div></div>
+        <div class="grat-row"><span class="grat-n">2</span><div class="grat-fields"><input class="journal-line" data-journal="d4-g2" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d4-w2" placeholder="because..."></textarea></div></div>
+        <div class="grat-row"><span class="grat-n">3</span><div class="grat-fields"><input class="journal-line" data-journal="d4-g3" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d4-w3" placeholder="because..."></textarea></div></div>
+        <div class="grat-row"><span class="grat-n">4</span><div class="grat-fields"><input class="journal-line" data-journal="d4-g4" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d4-w4" placeholder="because..."></textarea></div></div>
+        <div class="grat-row"><span class="grat-n">5</span><div class="grat-fields"><input class="journal-line" data-journal="d4-g5" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d4-w5" placeholder="because..."></textarea></div></div>
+        <div class="journal-saved" data-saved="d4-g1"></div>
+      </div>`},
+    {id:"affirm", label:"Affirmation", icon:"✶", content:`
+      <div class="affirmation">
+        <p>Today I allow myself to receive all the greatness source has for me.</p>
+        <p>I am worthy just for being me.</p>
+        <p class="affirm-seal">Today is a great day.</p>
+      </div>`}
+  ]
+};
+
+/* ---- Day 5 — Self Love & Fun ---- */
+PHASES[0].days[4] = {
+  n:5, name:"Love & Play",
+  title:"Love & Play",
+  sub:"Today is about you. Self love, joy, and having actual fun.",
+  tabs:[
+    {id:"teaching", label:"The Teaching", icon:"✦", content:`
+      <div class="audio-player">
+        <button class="play-btn" aria-label="Play training">${'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>'}</button>
+        <div class="audio-body">
+          <div class="audio-head">
+            <span class="audio-label">Day 5 Training</span>
+            <span class="audio-time"><span class="audio-cur">0:00</span> / <span class="audio-dur">--:--</span></span>
+          </div>
+          <div class="audio-title">Press play, then read along below</div>
+          <div class="audio-track"><div class="audio-fill"></div></div>
+        </div>
+        <audio preload="metadata" src="https://www.dropbox.com/scl/fi/u7usv6w2e1y1q5g29idxv/day-5-recalibrate.mp3?rlkey=v62ollib3oz0xsjhjq7gg2k8c&raw=1"></audio>
+      </div>
+      <div class="body-copy">
+        <p>As you keep counting your blessings and raising your frequency, your aura expands and you start allowing more in. The more you love your reality, the more your reality loves you back.</p>
+        <p>I'm excited for today, because today is all about self love and fun. Yes, fun. We're shifting the focus onto you. This isn't a side note in the work, it's a core part of recalibrating. You can't magnetize a life you love while running on empty and taking yourself too seriously.</p>
+      </div>
+      <div class="notice">
+        <div class="notice-label">Today's reminder</div>
+        <p>The more you allow yourself to feel love and supported, the more love and support you'll receive from source and the Universe.</p>
+      </div>
+      <div class="pullquote"><p>The more you love your reality, the more your reality loves you back.</p></div>
+      <div class="notice">
+        <div class="notice-label">Notice this</div>
+        <p>If "do something just for joy" makes you feel guilty, or you immediately think you don't have time, that's exactly why today matters. Joy isn't the reward you get after the work. It's part of how the work works. A lit-up woman is magnetic. Let yourself off the hook today.</p>
+      </div>
+      <div class="ground-note">In the next couple of days we'll start playing with your Human Design chart. If you don't have it yet, pull it now so you're ready. <a href="https://www.myhumandesign.com" target="_blank" rel="noopener">Get your free chart here</a> and note your Type and Authority.</div>`},
+    {id:"practice", label:"The Practice", icon:"🌙", content:`
+      <div class="body-copy">
+        <p>Today the focus is you. Fully taking time to experience the joy of being alive.</p>
+      </div>
+      <ol class="ritual">
+        <li><span class="ritual-n">1</span><div><strong>Do something your soul loves.</strong> Whatever lights you up and feels like pure joy. Be completely present with it. Soak up every piece of it. This is the main event today, not the thing you do if there's time left over.</div></li>
+        <li><span class="ritual-n">2</span><div><strong>Count your blessings.</strong> Write 5 new things you're grateful for and why. Read them back and say <em>thank you, thank you, thank you</em> after each, feeling it in your body. You can do this in the Reflect tab.</div></li>
+        <li><span class="ritual-n">3</span><div><strong>Re-charge your crystal.</strong> Listen to the Highest Timeline meditation below sometime today. Keep connecting to your vision and getting clearer on it. Hold your crystal while you listen and charge it again with the energy of your highest timeline.</div></li>
+        <li><span class="ritual-n">4</span><div><strong>Tonight, your gratitude.</strong> Before bed, think of the best thing that happened today. Close your eyes, tune into the feeling, and say <em>thank you, thank you, thank you</em>.</div></li>
+      </ol>
+      <div class="audio-player">
+        <button class="play-btn" aria-label="Play meditation">${'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>'}</button>
+        <div class="audio-body">
+          <div class="audio-head">
+            <span class="audio-label">Highest Timeline Meditation</span>
+            <span class="audio-time"><span class="audio-cur">0:00</span> / <span class="audio-dur">--:--</span></span>
+          </div>
+          <div class="audio-title">Re-charge your crystal with your vision</div>
+          <div class="audio-track"><div class="audio-fill"></div></div>
+        </div>
+        <audio preload="metadata" src="https://www.dropbox.com/scl/fi/iflks6c4m8jbqtyhezbm2/highest-timeline-meditation.mp3?rlkey=kkz66dowr19n795ohciqbim8j&raw=1"></audio>
+      </div>
+      <div class="share-note">Did something that lit you up? <a href="https://www.skool.com/embody-wealth?c=a0afd40b879a407f8c686bc5a396fea0&s=newest-cm&fl=" target="_blank" rel="noopener">Share your joy inside the community</a> so we can celebrate you.</div>`},
+    {id:"reflect", label:"Reflect", icon:"🪞", content:`
+      <div class="body-copy">
+        <p>Five new things you're grateful for, and why for each. Write it, read it back, and let the gratitude land in your body.</p>
+      </div>
+      <div class="gratitude-journal">
+        <div class="grat-row"><span class="grat-n">1</span><div class="grat-fields"><input class="journal-line" data-journal="d5-g1" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d5-w1" placeholder="because..."></textarea></div></div>
+        <div class="grat-row"><span class="grat-n">2</span><div class="grat-fields"><input class="journal-line" data-journal="d5-g2" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d5-w2" placeholder="because..."></textarea></div></div>
+        <div class="grat-row"><span class="grat-n">3</span><div class="grat-fields"><input class="journal-line" data-journal="d5-g3" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d5-w3" placeholder="because..."></textarea></div></div>
+        <div class="grat-row"><span class="grat-n">4</span><div class="grat-fields"><input class="journal-line" data-journal="d5-g4" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d5-w4" placeholder="because..."></textarea></div></div>
+        <div class="grat-row"><span class="grat-n">5</span><div class="grat-fields"><input class="journal-line" data-journal="d5-g5" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d5-w5" placeholder="because..."></textarea></div></div>
+        <div class="journal-saved" data-saved="d5-g1"></div>
+      </div>`},
+    {id:"affirm", label:"Affirmation", icon:"✶", content:`
+      <div class="affirmation">
+        <p>Today I allow myself to fully experience life in the moment.</p>
+        <p class="affirm-seal">The more fun I have, the more of what I want shows up.</p>
+      </div>`}
+  ]
+};
+
+/* ---- Day 6 — Inner Child ---- */
+PHASES[0].days[5] = {
+  n:6, name:"Inner Love",
+  title:"Inner Love",
+  sub:"Today we visit your younger self and open your heart to them.",
+  tabs:[
+    {id:"teaching", label:"The Teaching", icon:"✦", content:`
+      <div class="audio-player">
+        <button class="play-btn" aria-label="Play training">${'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>'}</button>
+        <div class="audio-body">
+          <div class="audio-head">
+            <span class="audio-label">Day 6 Training</span>
+            <span class="audio-time"><span class="audio-cur">0:00</span> / <span class="audio-dur">--:--</span></span>
+          </div>
+          <div class="audio-title">Press play, then read along below</div>
+          <div class="audio-track"><div class="audio-fill"></div></div>
+        </div>
+        <audio preload="metadata" src="https://www.dropbox.com/scl/fi/nhkk8h60i8p9m40zp5ofm/day-6-recalibrate.mp3?rlkey=09s5sis8ra84512evapj77ppg&raw=1"></audio>
+      </div>
+      <div class="body-copy">
+        <p>I hope you found time to do something truly nourishing yesterday. I loved feeling the energy in what you shared. I spent my day outside soaking in the golden ray of the sun, slow and unhurried, with my blue lotus tea and a book. So nourishing. And right in the middle of it, the downloads came, for my business and for the next thing my soul wants to create. That's not a coincidence. That's what filling your cup does.</p>
+        <p>Look at the week so far. You've connected to your highest timeline. You've released doubt, fear, and the old limiting beliefs. You've filled your cup with gratitude and love, and you've let yourself be present with real joy. That's a lot of ground.</p>
+        <p>Today we go somewhere tender. We visit your younger self and open your heart to them, to release the energetic imprints that may still be holding you back. This one's a favorite of mine.</p>
+      </div>
+      <div class="notice">
+        <div class="notice-label">Today's reminder</div>
+        <p>You are not your past. You can be whoever you want, starting right now. You have the power to change your habits and become your highest version. You are pure love, and love is our infinite power.</p>
+      </div>
+      <div class="pullquote"><p>You are not your past. You can be whoever you want, starting right now.</p></div>
+      <div class="body-copy">
+        <p>Today you give your love to someone you haven't seen in a while. Your younger self. They deserve it, and they deserve to let go of the reins. You're in the driver's seat now. You're here for them.</p>
+      </div>
+      <div class="notice">
+        <div class="notice-label">Notice this</div>
+        <p>This work can bring up more than you expect. Looking at a photo of yourself at seven and sending love can crack something open. That's not you doing it wrong, that's the stuck energy finally getting to move. Let the tears come if they come. Your younger self has been waiting a long time for you to turn toward them.</p>
+      </div>`},
+    {id:"practice", label:"The Practice", icon:"🌙", content:`
+      <div class="body-copy">
+        <p>Today you give your love to your younger self. They've been carrying things that were never theirs to hold.</p>
+      </div>
+      <ol class="ritual">
+        <li><span class="ritual-n">1</span><div><strong>Start with gratitude.</strong> Write 5 new things you're grateful for and why. Read them back and say <em>thank you, thank you, thank you</em> after each, feeling it in your body. You can do this in the Reflect tab.</div></li>
+        <li><span class="ritual-n">2</span><div><strong>Listen to the Inner Love meditation.</strong> Sometime today, play it below. I'll guide you to connect with your younger self and tell them the things they've been longing to hear. This is how you release the stuck energy from that timeline.</div></li>
+        <li><span class="ritual-n">3</span><div><strong>The photo ritual.</strong> Find a photo of yourself around 7 to 10, or any age you feel called to. Put it somewhere you'll see it every day. For one minute, longer if you want, look at them and give them love. One hand on your heart, one on the photo. Tell them you love them. Let the love ripple through your body and into your heart. Let the walls crumble. Every time you see that picture, let your inner child shine.</div></li>
+        <li><span class="ritual-n">4</span><div><strong>Tonight, your gratitude.</strong> Before bed, think of the best thing that happened today. Close your eyes, tune into the feeling, and say <em>thank you, thank you, thank you</em>.</div></li>
+      </ol>
+      <div class="audio-player">
+        <button class="play-btn" aria-label="Play meditation">${'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>'}</button>
+        <div class="audio-body">
+          <div class="audio-head">
+            <span class="audio-label">Inner Love Meditation</span>
+            <span class="audio-time"><span class="audio-cur">0:00</span> / <span class="audio-dur">--:--</span></span>
+          </div>
+          <div class="audio-title">Connect with your younger self</div>
+          <div class="audio-track"><div class="audio-fill"></div></div>
+        </div>
+        <audio preload="metadata" src="https://www.dropbox.com/scl/fi/2e7uoxsihhn21c15i1yrw/Inner-love-meditation.mp3?rlkey=vek5gwfi8uh3ymd9vt1y0xqgc&raw=1"></audio>
+      </div>
+      <div class="ground-note">Keep your Human Design chart handy. Over the next few days we move into de-conditioning your energy centers, and you'll want it close. Don't have it yet? <a href="https://www.myhumandesign.com" target="_blank" rel="noopener">Pull your free chart here</a> and note your Type and Authority.</div>
+      <div class="share-note">If you feel called, <a href="https://www.skool.com/embody-wealth?c=a0afd40b879a407f8c686bc5a396fea0&s=newest-cm&fl=" target="_blank" rel="noopener">share how the inner child work landed inside the community</a>. I'd love to hear it.</div>`},
+    {id:"reflect", label:"Reflect", icon:"🪞", content:`
+      <div class="body-copy">
+        <p>After the meditation, write to your younger self. Say the things they needed to hear and never did. Don't overthink it. Let it come from your heart.</p>
+      </div>
+      <div class="prompt-card">
+        <div class="prompt-q">Dear younger me...</div>
+        <textarea class="journal" data-journal="d6-letter" placeholder="Write your letter. This saves on its own."></textarea>
+        <div class="journal-saved" data-saved="d6-letter"></div>
+      </div>
+      <div class="body-copy" style="margin-top:28px">
+        <p>And your 5 gratitudes for today, with a why for each.</p>
+      </div>
+      <div class="gratitude-journal">
+        <div class="grat-row"><span class="grat-n">1</span><div class="grat-fields"><input class="journal-line" data-journal="d6-g1" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d6-w1" placeholder="because..."></textarea></div></div>
+        <div class="grat-row"><span class="grat-n">2</span><div class="grat-fields"><input class="journal-line" data-journal="d6-g2" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d6-w2" placeholder="because..."></textarea></div></div>
+        <div class="grat-row"><span class="grat-n">3</span><div class="grat-fields"><input class="journal-line" data-journal="d6-g3" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d6-w3" placeholder="because..."></textarea></div></div>
+        <div class="grat-row"><span class="grat-n">4</span><div class="grat-fields"><input class="journal-line" data-journal="d6-g4" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d6-w4" placeholder="because..."></textarea></div></div>
+        <div class="grat-row"><span class="grat-n">5</span><div class="grat-fields"><input class="journal-line" data-journal="d6-g5" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d6-w5" placeholder="because..."></textarea></div></div>
+        <div class="journal-saved" data-saved="d6-g1"></div>
+      </div>`},
+    {id:"affirm", label:"Affirmation", icon:"✶", content:`
+      <div class="affirmation">
+        <p>I love the child I was.</p>
+        <p>I am safe now, and I am the one who holds me.</p>
+        <p>I let the old walls crumble and the love move through.</p>
+        <p class="affirm-seal">I am whole, and I always was.</p>
       </div>`}
   ]
 };
@@ -900,16 +1331,16 @@ function renderStage(){
     const chapters = (d.activation.chapters||[]).map(c=>`<li data-seek="${c.sec}"><span class="chap-time">${c.time}</span><span class="chap-label">${c.label}</span></li>`).join('');
     act = `
       <div class="audio-player">
-        <button class="play-btn" id="audPlay" aria-label="Play meditation">${playSVG}</button>
+        <button class="play-btn" aria-label="Play meditation">${playSVG}</button>
         <div class="audio-body">
           <div class="audio-head">
             <span class="audio-label">${d.activation.label}</span>
-            <span class="audio-time"><span id="audCur">0:00</span> / <span id="audDur">--:--</span></span>
+            <span class="audio-time"><span class="audio-cur">0:00</span> / <span class="audio-dur">--:--</span></span>
           </div>
           <div class="audio-title">${d.activation.title}</div>
-          <div class="audio-track" id="audTrack"><div class="audio-fill" id="audFill"></div></div>
+          <div class="audio-track"><div class="audio-fill"></div></div>
         </div>
-        <audio id="audEl" preload="metadata" src="${d.activation.audio}"></audio>
+        <audio preload="metadata" src="${d.activation.audio}"></audio>
       </div>
       ${chapters?`<ul class="chapters seekable">${chapters}</ul>`:''}`;
   } else if(d.activation && d.activation.embed){
@@ -970,49 +1401,204 @@ function renderStage(){
 const pauseSVG = '<svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>';
 function fmtTime(s){ if(!isFinite(s)||s<0)s=0; const m=Math.floor(s/60),sec=Math.floor(s%60); return m+':'+(sec<10?'0':'')+sec; }
 function bindAudio(stage){
-  const el=stage.querySelector('#audEl'); if(!el) return;
-  const playBtn=stage.querySelector('#audPlay');
-  const fill=stage.querySelector('#audFill');
-  const track=stage.querySelector('#audTrack');
-  const cur=stage.querySelector('#audCur');
-  const dur=stage.querySelector('#audDur');
-  el.addEventListener('loadedmetadata',()=>{ dur.textContent=fmtTime(el.duration); });
-  el.addEventListener('timeupdate',()=>{
-    cur.textContent=fmtTime(el.currentTime);
-    if(el.duration) fill.style.width=(el.currentTime/el.duration*100)+'%';
-  });
-  el.addEventListener('ended',()=>{ playBtn.innerHTML=playSVG; });
-  playBtn.onclick=()=>{
-    if(el.paused){ el.play(); playBtn.innerHTML=pauseSVG; }
-    else { el.pause(); playBtn.innerHTML=playSVG; }
-  };
-  if(track) track.onclick=(e)=>{
-    const r=track.getBoundingClientRect();
-    const pct=Math.min(Math.max((e.clientX-r.left)/r.width,0),1);
-    if(el.duration) el.currentTime=pct*el.duration;
-  };
-  stage.querySelectorAll('.chapters.seekable li[data-seek]').forEach(li=>{
-    li.style.cursor='pointer';
-    li.onclick=()=>{ el.currentTime=+li.dataset.seek; if(el.paused){el.play(); if(playBtn) playBtn.innerHTML=pauseSVG;} };
+  const players=stage.querySelectorAll('.audio-player'); if(!players.length) return;
+  players.forEach(player=>{
+    const el=player.querySelector('audio'); if(!el) return;
+    const playBtn=player.querySelector('.play-btn');
+    const fill=player.querySelector('.audio-fill');
+    const track=player.querySelector('.audio-track');
+    const cur=player.querySelector('.audio-cur');
+    const dur=player.querySelector('.audio-dur');
+    el.addEventListener('loadedmetadata',()=>{ if(dur) dur.textContent=fmtTime(el.duration); });
+    el.addEventListener('timeupdate',()=>{
+      if(cur) cur.textContent=fmtTime(el.currentTime);
+      if(el.duration&&fill) fill.style.width=(el.currentTime/el.duration*100)+'%';
+    });
+    el.addEventListener('ended',()=>{ if(playBtn) playBtn.innerHTML=playSVG; });
+    if(playBtn) playBtn.onclick=()=>{
+      if(el.paused){
+        // pause any other players on the page first
+        stage.querySelectorAll('.audio-player audio').forEach(other=>{ if(other!==el){ other.pause(); }});
+        stage.querySelectorAll('.audio-player .play-btn').forEach(b=>{ if(b!==playBtn) b.innerHTML=playSVG; });
+        el.play(); playBtn.innerHTML=pauseSVG;
+      } else { el.pause(); playBtn.innerHTML=playSVG; }
+    };
+    if(track) track.onclick=(e)=>{
+      const r=track.getBoundingClientRect();
+      const pct=Math.min(Math.max((e.clientX-r.left)/r.width,0),1);
+      if(el.duration) el.currentTime=pct*el.duration;
+    };
+    player.querySelectorAll('.chapters.seekable li[data-seek]').forEach(li=>{
+      li.style.cursor='pointer';
+      li.onclick=()=>{ el.currentTime=+li.dataset.seek; if(el.paused){el.play(); if(playBtn) playBtn.innerHTML=pauseSVG;} };
+    });
   });
 }
 
 const JKEY='recalibrate21_journal';
 function loadJournal(){ try{return JSON.parse(localStorage.getItem(JKEY))||{}}catch(e){return {}} }
 function saveJournal(o){ try{localStorage.setItem(JKEY,JSON.stringify(o))}catch(e){} }
+
+/* ---- My Notes: compile all reflections by day ---- */
+/* Each day declares how to read its journal keys. */
+const NOTES_MAP = [
+  {day:1, name:"Your Highest Timeline", entries:[
+    {type:"text", key:"d1-vision", label:"My highest timeline"}
+  ]},
+  {day:2, name:"Soul Recalibration", entries:[
+    {type:"text", key:"d2-release", label:"What I'm ready to release"}
+  ]},
+  {day:3, name:"Counting Your Blessings", entries:[
+    {type:"gratitude", prefix:"d3", label:"Gratitude"}
+  ]},
+  {day:4, name:"Open to Receiving", entries:[
+    {type:"gratitude", prefix:"d4", label:"Gratitude"}
+  ]},
+  {day:5, name:"Love & Play", entries:[
+    {type:"gratitude", prefix:"d5", label:"Gratitude"}
+  ]},
+  {day:6, name:"Inner Love", entries:[
+    {type:"text", key:"d6-letter", label:"Letter to my younger self"},
+    {type:"gratitude", prefix:"d6", label:"Gratitude"}
+  ]}
+];
+function notesHasContent(store){
+  return NOTES_MAP.some(d=>d.entries.some(e=>{
+    if(e.type==='text') return store[e.key]&&store[e.key].trim();
+    if(e.type==='gratitude') return [1,2,3,4,5].some(i=>store[e.prefix+'-g'+i]&&store[e.prefix+'-g'+i].trim());
+    return false;
+  }));
+}
+function compileNotesData(store){
+  const days=[];
+  NOTES_MAP.forEach(d=>{
+    const blocks=[];
+    d.entries.forEach(e=>{
+      if(e.type==='text'){
+        const v=(store[e.key]||'').trim();
+        if(v) blocks.push({label:e.label, kind:'text', text:v});
+      } else if(e.type==='gratitude'){
+        const items=[];
+        for(let i=1;i<=5;i++){
+          const g=(store[e.prefix+'-g'+i]||'').trim();
+          const w=(store[e.prefix+'-w'+i]||'').trim();
+          if(g) items.push({thing:g, why:w});
+        }
+        if(items.length) blocks.push({label:e.label, kind:'gratitude', items});
+      }
+    });
+    if(blocks.length) days.push({day:d.day, name:d.name, blocks});
+  });
+  return days;
+}
+function renderNotesPanel(){
+  const store=loadJournal();
+  const body=document.getElementById('notesBody');
+  const dlBtn=document.getElementById('notesDownload');
+  const data=compileNotesData(store);
+  body.innerHTML='';
+  if(!data.length){
+    body.innerHTML='<div class="notes-empty">Your reflections will gather here as you move through the days. Nothing written yet. When you do, come back and it\'ll all be waiting for you.</div>';
+    if(dlBtn) dlBtn.disabled=true;
+    return;
+  }
+  if(dlBtn) dlBtn.disabled=false;
+  data.forEach(d=>{
+    const wrap=document.createElement('div'); wrap.className='notes-day';
+    const t=document.createElement('div'); t.className='notes-day-title'; t.textContent='Day '+d.day;
+    const n=document.createElement('div'); n.className='notes-day-name'; n.textContent=d.name;
+    wrap.appendChild(t); wrap.appendChild(n);
+    d.blocks.forEach(b=>{
+      const entry=document.createElement('div'); entry.className='notes-entry';
+      const lbl=document.createElement('div'); lbl.className='notes-entry-label'; lbl.textContent=b.label;
+      entry.appendChild(lbl);
+      if(b.kind==='text'){
+        const tx=document.createElement('div'); tx.className='notes-entry-text'; tx.textContent=b.text;
+        entry.appendChild(tx);
+      } else {
+        const ul=document.createElement('ul'); ul.className='notes-grat';
+        b.items.forEach(it=>{
+          const li=document.createElement('li');
+          li.appendChild(document.createTextNode(it.thing));
+          if(it.why){ const s=document.createElement('span'); s.textContent=' \u2014 '+it.why; li.appendChild(s); }
+          ul.appendChild(li);
+        });
+        entry.appendChild(ul);
+      }
+      wrap.appendChild(entry);
+    });
+    body.appendChild(wrap);
+  });
+}
+function buildNotesText(){
+  const store=loadJournal();
+  const data=compileNotesData(store);
+  let out='MY RECALIBRATE NOTES\n';
+  out+='21-Day Recalibration · Embody Wealth\n';
+  out+='Saved '+new Date().toLocaleDateString(undefined,{year:'numeric',month:'long',day:'numeric'})+'\n';
+  out+='\n========================================\n\n';
+  data.forEach(d=>{
+    out+='DAY '+d.day+' — '+d.name.toUpperCase()+'\n\n';
+    d.blocks.forEach(b=>{
+      if(b.kind==='text'){
+        out+=b.label+':\n'+b.text+'\n\n';
+      } else {
+        out+=b.label+':\n';
+        b.items.forEach((it,i)=>{ out+=(i+1)+'. '+it.thing+(it.why?' — '+it.why:'')+'\n'; });
+        out+='\n';
+      }
+    });
+    out+='----------------------------------------\n\n';
+  });
+  out+='To living our dreams. — Aurailia \u2726\n';
+  return out;
+}
+function downloadNotes(){
+  const text=buildNotesText();
+  const blob=new Blob([text],{type:'text/plain'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url; a.download='My-Recalibrate-Notes.txt';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  setTimeout(()=>URL.revokeObjectURL(url),1000);
+}
+function openNotes(){ renderNotesPanel(); document.getElementById('notesOverlay').classList.add('open'); document.getElementById('notesPanel').classList.add('open'); }
+function closeNotes(){ document.getElementById('notesOverlay').classList.remove('open'); document.getElementById('notesPanel').classList.remove('open'); }
+(function wireNotes(){
+  const btn=document.getElementById('notesBtn');
+  const close=document.getElementById('notesClose');
+  const overlay=document.getElementById('notesOverlay');
+  const dl=document.getElementById('notesDownload');
+  if(btn) btn.onclick=openNotes;
+  if(close) close.onclick=closeNotes;
+  if(overlay) overlay.onclick=closeNotes;
+  if(dl) dl.onclick=downloadNotes;
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeNotes(); });
+})();
 function bindJournal(stage){
   const store=loadJournal();
-  stage.querySelectorAll('.journal[data-journal]').forEach(ta=>{
-    const key=ta.dataset.journal;
-    if(store[key]) ta.value=store[key];
-    const savedEl=stage.querySelector(`[data-saved="${key}"]`);
+  // shared saved-indicator per day (first one found)
+  const showSaved=(()=>{
     let t=null;
-    const autosize=()=>{ ta.style.height='auto'; ta.style.height=Math.max(140,ta.scrollHeight)+'px'; };
+    return ()=>{
+      stage.querySelectorAll('.journal-saved').forEach(savedEl=>{
+        savedEl.textContent='Saved'; savedEl.classList.add('show');
+      });
+      clearTimeout(t);
+      t=setTimeout(()=>stage.querySelectorAll('.journal-saved').forEach(s=>s.classList.remove('show')),1400);
+    };
+  })();
+  stage.querySelectorAll('[data-journal]').forEach(field=>{
+    const key=field.dataset.journal;
+    if(store[key]) field.value=store[key];
+    const isTextarea=field.tagName==='TEXTAREA';
+    const big=field.classList.contains('journal')&&!field.classList.contains('grat-why');
+    const autosize=()=>{ if(!isTextarea) return; field.style.height='auto'; field.style.height=Math.max(big?140:46,field.scrollHeight)+'px'; };
     autosize();
-    ta.addEventListener('input',()=>{
+    field.addEventListener('input',()=>{
       autosize();
-      const s=loadJournal(); s[key]=ta.value; saveJournal(s);
-      if(savedEl){ savedEl.textContent='Saved'; savedEl.classList.add('show'); clearTimeout(t); t=setTimeout(()=>savedEl.classList.remove('show'),1400); }
+      const s=loadJournal(); s[key]=field.value; saveJournal(s);
+      showSaved();
     });
   });
 }

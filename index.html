@@ -269,6 +269,28 @@ aside.path{
 .day-link.active .day-name{color:#fff}
 .day-link.locked{opacity:.45}
 .day-link.locked .day-name{font-style:italic}
+.day-link.daylocked{opacity:.5;position:relative}
+.day-link.daylocked .day-name{color:var(--text-dim)}
+.day-link.daylocked .day-num{color:var(--text-dim)}
+.lock-ico{position:absolute;right:10px;top:50%;transform:translateY(-50%);color:var(--text-dim)}
+.lock-ico svg{width:14px;height:14px;display:block}
+
+/* locked day screen */
+.locked-screen{text-align:center;padding:60px 30px 40px;max-width:520px;margin:0 auto}
+.locked-orb{
+  width:88px;height:88px;border-radius:50%;margin:0 auto 26px;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(150deg, rgba(155,134,201,0.3), rgba(124,100,168,0.18));
+  border:1px solid rgba(185,168,224,0.3);
+}
+.locked-orb svg{width:38px;height:38px;color:var(--lavender)}
+.locked-title{
+  font-family:var(--serif);font-weight:600;font-size:38px;line-height:1.1;margin-bottom:16px;
+  background:linear-gradient(105deg,#f6b6da,#c4a4e8,#9d86c9);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;
+}
+.locked-text{font-family:var(--sans);font-size:16px;line-height:1.65;color:var(--text-soft);margin-bottom:14px}
+.locked-sub{font-family:var(--serif);font-style:italic;font-size:17px;color:var(--text-dim)}
 
 /* ---------- CONTENT STAGE (on dark) ---------- */
 main.stage{
@@ -409,6 +431,17 @@ main.stage{
   transition:border-color .15s ease, color .15s ease;
 }
 .share-note a:hover, .body-copy a:hover, .ground-note a:hover{color:#fff;border-bottom-color:#fff}
+
+/* reference diagram (e.g. energy centers) */
+.ref-diagram{
+  background:#f6f1e9;border-radius:18px;padding:16px;margin:6px 0 26px;
+  box-shadow:0 14px 38px rgba(0,0,0,0.3);
+}
+.ref-diagram img{display:block;width:100%;height:auto;border-radius:10px}
+.ref-caption{
+  font-family:var(--sans);font-size:13px;color:var(--text-dim);
+  text-align:center;margin-top:12px;font-style:italic;
+}
 
 /* abraham hicks rampage card (external youtube) */
 .rampage-card{
@@ -1159,6 +1192,182 @@ PHASES[0].days[5] = {
   ]
 };
 
+/* ---- Day 7 — Magic (close of Week One) ---- */
+PHASES[0].days[6] = {
+  n:7, name:"Dreaming Into Being",
+  title:"Dreaming Into Being",
+  sub:"Connecting to the magic of already living the life you desire.",
+  tabs:[
+    {id:"teaching", label:"The Teaching", icon:"✦", content:`
+      <div class="audio-player">
+        <button class="play-btn" aria-label="Play training">${'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>'}</button>
+        <div class="audio-body">
+          <div class="audio-head">
+            <span class="audio-label">Day 7 Training</span>
+            <span class="audio-time"><span class="audio-cur">0:00</span> / <span class="audio-dur">--:--</span></span>
+          </div>
+          <div class="audio-title">Press play, then read along below</div>
+          <div class="audio-track"><div class="audio-fill"></div></div>
+        </div>
+        <audio preload="metadata" src="https://www.dropbox.com/scl/fi/sb16m28fanonu06qsu11o/day-7-recalibrate.mp3?rlkey=gwwgylpq7tn18q886ht9f8zzy&raw=1"></audio>
+      </div>
+      <div class="body-copy">
+        <p>Day 7. Look at you. I'm so proud of you for staying with this. Give yourself a hug and a high five, because a week of showing up for yourself is no small thing.</p>
+        <p>Yesterday you turned toward your younger self and told them you've got it from here. That they can let go of the reins and relax, because you're holding them now. As we keep connecting to love and gratitude and surrendering to the magic of the Universe, we raise our frequency and recalibrate to our highest timeline.</p>
+        <p>Today's theme is magic. Connecting to the feeling of already having and living the life you desire. The more you do this, the more magnetic you become to the things, events, and people that support your dreams.</p>
+      </div>
+      <div class="notice">
+        <div class="notice-label">Today's reminder</div>
+        <p>The more you practice visualizing your highest timeline and being your highest self, the more clarity you receive. Your aura expands, and it magnetizes the things, events, people, and circumstances that support the life you want to create.</p>
+      </div>
+      <div class="pullquote"><p>Today's theme is magic. The feeling of already living the life you desire.</p></div>
+      <div class="body-copy">
+        <p>This closes your first week. You've returned to center. You cleared the old weight, filled your cup, loved yourself, and met the child you used to be. Today you practice living the dream as if it's already here. That's the magic that carries you into Week Two.</p>
+      </div>`},
+    {id:"practice", label:"The Practice", icon:"🌙", content:`
+      <div class="body-copy">
+        <p>Today you travel to the end of the year and celebrate everything you accomplished. Then you have a magical day by living today's goals in advance, already done, already wonderful.</p>
+      </div>
+      <ol class="ritual">
+        <li><span class="ritual-n">1</span><div><strong>Have a magical day, in advance.</strong> A new morning practice starts today and runs the rest of the challenge. Before your gratitude list, take a couple of minutes to think through your day, then imagine it already lived and turned out beautifully. The easy successful meeting. The market run that felt joyful. The email campaign that flowed. Say <em>thank you</em> for each as if it already happened, even better than you pictured.</div></li>
+        <li><span class="ritual-n">2</span><div><strong>Listen to Dreaming Into Being.</strong> First thing this morning, or as early as you can before the day starts, play the meditation below.</div></li>
+        <li><span class="ritual-n">3</span><div><strong>Count your blessings.</strong> Write 5 new things you're grateful for and why. Read them back with <em>thank you, thank you, thank you</em>, feeling each one. You can do this in the Reflect tab.</div></li>
+        <li><span class="ritual-n">4</span><div><strong>Tonight, your gratitude.</strong> Before bed, think of the best thing that happened today. Close your eyes, tune into the feeling, and say <em>thank you, thank you, thank you</em>.</div></li>
+      </ol>
+      <div class="audio-player">
+        <button class="play-btn" aria-label="Play meditation">${'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>'}</button>
+        <div class="audio-body">
+          <div class="audio-head">
+            <span class="audio-label">Dreaming Into Being</span>
+            <span class="audio-time"><span class="audio-cur">0:00</span> / <span class="audio-dur">--:--</span></span>
+          </div>
+          <div class="audio-title">Listen first thing this morning</div>
+          <div class="audio-track"><div class="audio-fill"></div></div>
+        </div>
+        <audio preload="metadata" src="https://www.dropbox.com/scl/fi/y09ycwlskrqg2be01z07j/dreaming-into-being-meditation.mp3?rlkey=vl9e5zgmncuw36qz93ngqh84k&raw=1"></audio>
+      </div>
+      <div class="ground-note">Keep your Human Design chart handy. Week Two moves into de-conditioning your energy centers, and you'll want it close. Don't have it yet? <a href="https://www.myhumandesign.com" target="_blank" rel="noopener">Pull your free chart here</a> and note your Type and Authority.</div>
+      <div class="share-note">A full week in. <a href="https://www.skool.com/embody-wealth?c=a0afd40b879a407f8c686bc5a396fea0&s=newest-cm&fl=" target="_blank" rel="noopener">Share what's shifted for you inside the community</a>. I'd love to celebrate you.</div>`},
+    {id:"reflect", label:"Reflect", icon:"🪞", content:`
+      <div class="body-copy">
+        <p>Travel to the end of this year. You're celebrating everything you made happen. Write it from there, in the present tense, as if it's already real.</p>
+      </div>
+      <div class="prompt-card">
+        <div class="prompt-q">It's the end of the year and I'm celebrating. This year I...</div>
+        <textarea class="journal" data-journal="d7-yearend" placeholder="Write it as if it already happened. This saves on its own."></textarea>
+        <div class="journal-saved" data-saved="d7-yearend"></div>
+      </div>
+      <div class="body-copy" style="margin-top:28px">
+        <p>And your 5 gratitudes for today, with a why for each.</p>
+      </div>
+      <div class="gratitude-journal">
+        <div class="grat-row"><span class="grat-n">1</span><div class="grat-fields"><input class="journal-line" data-journal="d7-g1" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d7-w1" placeholder="because..."></textarea></div></div>
+        <div class="grat-row"><span class="grat-n">2</span><div class="grat-fields"><input class="journal-line" data-journal="d7-g2" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d7-w2" placeholder="because..."></textarea></div></div>
+        <div class="grat-row"><span class="grat-n">3</span><div class="grat-fields"><input class="journal-line" data-journal="d7-g3" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d7-w3" placeholder="because..."></textarea></div></div>
+        <div class="grat-row"><span class="grat-n">4</span><div class="grat-fields"><input class="journal-line" data-journal="d7-g4" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d7-w4" placeholder="because..."></textarea></div></div>
+        <div class="grat-row"><span class="grat-n">5</span><div class="grat-fields"><input class="journal-line" data-journal="d7-g5" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d7-w5" placeholder="because..."></textarea></div></div>
+        <div class="journal-saved" data-saved="d7-g1"></div>
+      </div>`},
+    {id:"affirm", label:"Affirmation", icon:"✶", content:`
+      <div class="affirmation">
+        <p>Today I am having an amazing day full of ease and flow.</p>
+        <p class="affirm-seal">Everything is working out for me better than I imagined.</p>
+      </div>`}
+  ]
+};
+
+/* ---- Day 8 — Energetic Blueprint (Week Two opens) ---- */
+PHASES[1].days[0] = {
+  n:8, name:"Your Energetic Blueprint",
+  title:"Your Energetic Blueprint",
+  sub:"Week two. We shift into the frequency of your Human Design.",
+  tabs:[
+    {id:"teaching", label:"The Teaching", icon:"✦", content:`
+      <div class="audio-player">
+        <button class="play-btn" aria-label="Play training">${'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>'}</button>
+        <div class="audio-body">
+          <div class="audio-head">
+            <span class="audio-label">Day 8 Training</span>
+            <span class="audio-time"><span class="audio-cur">0:00</span> / <span class="audio-dur">--:--</span></span>
+          </div>
+          <div class="audio-title">Press play, then read along below</div>
+          <div class="audio-track"><div class="audio-fill"></div></div>
+        </div>
+        <audio preload="metadata" src="https://www.dropbox.com/scl/fi/52xky3ejvn0jz6gh52l1b/day-8-recalibrate.mp3?rlkey=mj5ipooqp2cn1u3tof05hmh6v&raw=1"></audio>
+      </div>
+      <div class="body-copy">
+        <p>Welcome to week two. Last week was about opening your capacity to receive, through gratitude and the energy of love. Every blessing you counted recalibrated you toward love, and love is the energy underneath all the good in your life. Health, abundance, prosperity, real relationships. Love is the key to all of it.</p>
+        <p>This week we shift into the frequency of your energetic blueprint. Your Human Design. This is the map of how your energy is actually built to move, and once you can see it, the pushing and forcing starts to make sense, and so does the way back to ease.</p>
+      </div>
+      <div class="notice">
+        <div class="notice-label">Today's reminder</div>
+        <p>You were born with a unique energetic blueprint. Understanding your design and the way your energy works is the beginning of your journey into alignment. Human Design is meant to open your eyes and unveil your magic.</p>
+      </div>
+      <div class="pullquote"><p>Human Design is meant to open your eyes and unveil your magic.</p></div>
+      <div class="body-copy">
+        <p>Here's your map for the week. The nine centers below are where energy runs in your body. Defined centers (the colored shapes in your chart) are your consistent, reliable energy. Undefined or open centers (the white shapes) are where you take in and amplify energy from everyone around you, and where a lot of conditioning gets picked up over a lifetime. This week we clear and de-condition them, one at a time.</p>
+      </div>
+      <div class="ref-diagram">
+        <img src="energy-centers.jpg" alt="The nine Human Design energy centers and what each one governs">
+        <div class="ref-caption">The nine energy centers. Keep this close all week.</div>
+      </div>
+      <div class="notice">
+        <div class="notice-label">Notice this</div>
+        <p>When you look at your open centers, don't read them as weaknesses. Your open centers are your places of wisdom. They're where you've learned to feel into others and the world. The work isn't to close them, it's to stop letting them run you. To know which energy is actually yours.</p>
+      </div>`},
+    {id:"practice", label:"The Practice", icon:"🌙", content:`
+      <div class="body-copy">
+        <p>Today we clear the energy centers, cut the energetic cords that have attached to your open centers over the years, and call back the energy you've sent out into the world.</p>
+      </div>
+      <ol class="ritual">
+        <li><span class="ritual-n">1</span><div><strong>Have a magical day, in advance.</strong> First thing, take a couple of minutes to live your day before it happens. Say <em>thank you</em> for each thing as if it already turned out beautifully. Close with: <em>and thank you for the great news coming to me today.</em></div></li>
+        <li><span class="ritual-n">2</span><div><strong>Count your blessings.</strong> Write 5 new things you're grateful for and why. Read them back with <em>thank you, thank you, thank you</em>. You can do this in the Reflect tab.</div></li>
+        <li><span class="ritual-n">3</span><div><strong>Read your chart.</strong> Pull up your Human Design chart and connect with your Type and Strategy. Then look at your centers. Which are defined (colored) and which are undefined (white)? Use the diagram in the Teaching tab to see what each one governs. Tomorrow we focus on the Spleen.</div></li>
+        <li><span class="ritual-n">4</span><div><strong>Listen to the Energetic Clearing meditation.</strong> Anytime today, as often as you like. It's best right before bed, so you sleep deeply and wake refreshed.</div></li>
+        <li><span class="ritual-n">5</span><div><strong>Tonight, your gratitude.</strong> Before bed, think of the best thing that happened today, tune into the feeling, and say <em>thank you, thank you, thank you</em>.</div></li>
+      </ol>
+      <div class="audio-player">
+        <button class="play-btn" aria-label="Play meditation">${'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>'}</button>
+        <div class="audio-body">
+          <div class="audio-head">
+            <span class="audio-label">Energetic Clearing Meditation</span>
+            <span class="audio-time"><span class="audio-cur">0:00</span> / <span class="audio-dur">--:--</span></span>
+          </div>
+          <div class="audio-title">Clear, cut cords, call your energy back</div>
+          <div class="audio-track"><div class="audio-fill"></div></div>
+        </div>
+        <audio preload="metadata" src="https://www.dropbox.com/scl/fi/lm15twgj05iqixbzirpag/energetic-clearing-meditation.mp3?rlkey=l6smrmpznfwjartkpgsxgecue&raw=1"></audio>
+      </div>
+      <div class="ground-note">Don't have your chart yet? <a href="https://www.myhumandesign.com" target="_blank" rel="noopener">Pull your free chart here</a> and note your Type, Strategy, Authority, and which centers are colored vs white. You'll use it all week.</div>
+      <div class="share-note">What did you discover in your chart? <a href="https://www.skool.com/embody-wealth?c=a0afd40b879a407f8c686bc5a396fea0&s=newest-cm&fl=" target="_blank" rel="noopener">Share it inside the community</a>. I'd love to hear it.</div>`},
+    {id:"reflect", label:"Reflect", icon:"🪞", content:`
+      <div class="body-copy">
+        <p>First, capture what you noticed in your chart today. This is your starting point for the week.</p>
+      </div>
+      <div class="prompt-card">
+        <div class="prompt-q">My Type and Strategy, my defined centers, my open centers, and anything that surprised me when I looked.</div>
+        <textarea class="journal" data-journal="d8-chart" placeholder="Write what you found. This saves on its own."></textarea>
+        <div class="journal-saved" data-saved="d8-chart"></div>
+      </div>
+      <div class="body-copy" style="margin-top:28px">
+        <p>And your 5 gratitudes for today, with a why for each.</p>
+      </div>
+      <div class="gratitude-journal">
+        <div class="grat-row"><span class="grat-n">1</span><div class="grat-fields"><input class="journal-line" data-journal="d8-g1" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d8-w1" placeholder="because..."></textarea></div></div>
+        <div class="grat-row"><span class="grat-n">2</span><div class="grat-fields"><input class="journal-line" data-journal="d8-g2" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d8-w2" placeholder="because..."></textarea></div></div>
+        <div class="grat-row"><span class="grat-n">3</span><div class="grat-fields"><input class="journal-line" data-journal="d8-g3" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d8-w3" placeholder="because..."></textarea></div></div>
+        <div class="grat-row"><span class="grat-n">4</span><div class="grat-fields"><input class="journal-line" data-journal="d8-g4" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d8-w4" placeholder="because..."></textarea></div></div>
+        <div class="grat-row"><span class="grat-n">5</span><div class="grat-fields"><input class="journal-line" data-journal="d8-g5" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d8-w5" placeholder="because..."></textarea></div></div>
+        <div class="journal-saved" data-saved="d8-g1"></div>
+      </div>`},
+    {id:"affirm", label:"Affirmation", icon:"✶", content:`
+      <div class="affirmation">
+        <p>Today I continue to align with my energetic blueprint.</p>
+        <p class="affirm-seal">The more I experiment with it, the more I become who I was born to be.</p>
+      </div>`}
+  ]
+};
+
 /* ---- WELCOME (Day 0) — the doorway before the path begins ---- */
 const WELCOME = {
   n:0, name:"Welcome", title:"Welcome In", isWelcome:true,
@@ -1201,11 +1410,26 @@ let progress = loadProgress();
 const flatDays = PHASES.flatMap(p=>p.days);
 function findDay(n){ return n===0 ? WELCOME : flatDays.find(d=>d.n===n); }
 
+/* ============================================================
+   UNLOCK CONTROL
+   Welcome (Day 0) is always open.
+   Set UNLOCKED_THROUGH to the highest day number you want open.
+     0  = only Welcome is unlocked (all days locked)
+     1  = Welcome + Day 1
+     5  = Welcome through Day 5
+     21 = everything unlocked
+   Change this ONE number to release more days.
+   ============================================================ */
+const UNLOCKED_THROUGH = 0;
+function isUnlocked(n){ return n===0 || n<=UNLOCKED_THROUGH; }
+
+
 let current = 1;
 let collapsed = {0:false,1:true,2:true}; // week 1 open by default
 
 const caretSVG = '<svg class="phase-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>';
 const playSVG = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
+const lockSVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>';
 const headphoneSVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>';
 const filmSVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2.5"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/></svg>';
 
@@ -1235,11 +1459,15 @@ function renderPath(){
     const isCol = collapsed[pi];
     const days = ph.days.map(d=>{
       const built = d.tabs && d.tabs.length>0;
+      const locked = !isUnlocked(d.n);
       const cls = ['day-link'];
       if(d.n===current) cls.push('active');
       if(progress[d.n]) cls.push('done');
       if(!built) cls.push('locked');
+      if(locked) cls.push('daylocked');
+      const lockIcon = locked ? '<span class="lock-ico">'+lockSVG+'</span>' : '';
       return `<div class="${cls.join(' ')}" data-day="${d.n}">
+        ${lockIcon}
         <span class="day-num">Day ${d.n}</span>
         <span class="day-name">${d.title || d.name}</span>
       </div>`;
@@ -1268,7 +1496,7 @@ function renderPath(){
     b.onclick=()=>{ const i=+b.dataset.phasehead; collapsed[i]=!collapsed[i]; renderPath(); };
   });
   nav.querySelectorAll('[data-day]').forEach(el=>{
-    el.onclick=()=>{ current=+el.dataset.day; renderStage(); renderPath(); };
+    el.onclick=()=>{ const n=+el.dataset.day; if(!isUnlocked(n)){ current=n; renderStage(); renderPath(); return; } current=n; renderStage(); renderPath(); };
   });
 }
 
@@ -1279,6 +1507,21 @@ function renderStage(){
   const done = progress[d.n];
 
   const markPill = `<button class="mark-pill ${done?'done':''}" data-mark><span class="ring"></span>${done?'Completed':'Mark Complete'}</button>`;
+
+  // locked day: show a locked screen instead of content
+  if(!isUnlocked(d.n)){
+    stage.innerHTML = `
+      <div class="day-topline"><span class="day-meta">Day ${d.n} of 21</span></div>
+      <div class="locked-screen">
+        <div class="locked-orb">${lockSVG}</div>
+        <h1 class="locked-title">This day isn't open yet</h1>
+        <p class="locked-text">Day ${d.n} unlocks soon. We move through this together, one day at a time, so each practice has room to land before the next one arrives.</p>
+        <p class="locked-sub">In the meantime, keep carrying your crystal and stay with today's practice.</p>
+      </div>
+      ${footNav(d)}`;
+    bindFoot(d);
+    return;
+  }
 
   if(d.isWelcome){
     const tabBtnsW = d.tabs.map((t,i)=>`<button class="tab ${i===0?'active':''}" data-tab="${t.id}">${t.icon?`<span class="ico">${t.icon}</span>`:''}${t.label}</button>`).join('');
@@ -1460,6 +1703,14 @@ const NOTES_MAP = [
   {day:6, name:"Inner Love", entries:[
     {type:"text", key:"d6-letter", label:"Letter to my younger self"},
     {type:"gratitude", prefix:"d6", label:"Gratitude"}
+  ]},
+  {day:7, name:"Dreaming Into Being", entries:[
+    {type:"text", key:"d7-yearend", label:"My year-end celebration"},
+    {type:"gratitude", prefix:"d7", label:"Gratitude"}
+  ]},
+  {day:8, name:"Your Energetic Blueprint", entries:[
+    {type:"text", key:"d8-chart", label:"My Human Design chart notes"},
+    {type:"gratitude", prefix:"d8", label:"Gratitude"}
   ]}
 ];
 function notesHasContent(store){
@@ -1695,8 +1946,8 @@ function openPhaseFor(n){
   if(!started){
     current = 0;
   } else {
-    const firstUnfinished = flatDays.find(d=>d.tabs.length>0 && !progress[d.n]);
-    current = firstUnfinished ? firstUnfinished.n : 1;
+    const firstUnfinished = flatDays.find(d=>d.tabs.length>0 && isUnlocked(d.n) && !progress[d.n]);
+    current = firstUnfinished ? firstUnfinished.n : 0;
   }
   openPhaseFor(current);
   renderPath();

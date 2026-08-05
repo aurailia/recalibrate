@@ -456,7 +456,15 @@ main.stage{
 .rampage-note{
   font-family:var(--sans);font-size:14px;line-height:1.55;color:var(--text-soft);margin-bottom:16px;
 }
-.rampage-card .video-frame{margin-bottom:0}
+.rampage-btn{
+  display:inline-flex;align-items:center;gap:11px;
+  font-family:var(--sans);font-size:15px;font-weight:600;color:#fff;text-decoration:none;
+  background:linear-gradient(135deg,#8d76bf,#a892d4);
+  border-radius:12px;padding:14px 24px;box-shadow:0 8px 20px rgba(141,118,191,0.4);
+  transition:transform .15s ease;
+}
+.rampage-btn:hover{transform:translateY(-1px)}
+.rampage-btn svg{width:18px;height:18px}
 
 /* notice callout (teaching) */
 .notice{
@@ -1002,7 +1010,10 @@ PHASES[0].days[3] = {
       <div class="rampage-card">
         <div class="rampage-label">▶ Abraham Hicks · Morning Rampage</div>
         <div class="rampage-note">A rampage of appreciation to play while you're out in nature. This is Abraham Hicks' recording on YouTube.</div>
-        <div class="video-frame" style="--vid-ratio:56.25%"><iframe src="https://www.youtube.com/embed/FmczMP1gQzk" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe></div>
+        <a class="rampage-btn" href="https://youtu.be/FmczMP1gQzk" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+          Play the Morning Rampage on YouTube
+        </a>
       </div>
       <div class="share-note">If you feel called, <a href="https://www.skool.com/embody-wealth?c=a0afd40b879a407f8c686bc5a396fea0&s=newest-cm&fl=" target="_blank" rel="noopener">share how the rampage landed for you inside the community</a>. I love hearing how this is shifting your energy.</div>`},
     {id:"reflect", label:"Reflect", icon:"🪞", content:`

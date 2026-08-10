@@ -1502,6 +1502,60 @@ PHASES[1].days[1] = {
   ]
 };
 
+/* ---- Day 10 — Just BE (rest day, deliberately spacious) ---- */
+PHASES[1].days[2] = {
+  n:10, name:"Just BE",
+  title:"Just BE",
+  sub:"No lists. No shoulds. Today you let it all go and simply be.",
+  tabs:[
+    {id:"teaching", label:"The Message", icon:"✦", content:`
+      <div class="audio-player">
+        <button class="play-btn" aria-label="Play message">${'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>'}</button>
+        <div class="audio-body">
+          <div class="audio-head">
+            <span class="audio-label">Day 10 Message</span>
+            <span class="audio-time"><span class="audio-cur">0:00</span> / <span class="audio-dur">--:--</span></span>
+          </div>
+          <div class="audio-title">Press play, then let the day be soft</div>
+          <div class="audio-track"><div class="audio-fill"></div></div>
+        </div>
+        <audio preload="metadata" src="https://www.dropbox.com/scl/fi/38j0r1qpfdcjabzd9dnrl/day-10-recalibrate.mp3?rlkey=vmuwhj9a5fay0ujydf7k89xn5&raw=1"></audio>
+      </div>
+      <div class="body-copy">
+        <p>Halfway there. Ten days in, and I hope you can feel how calibrated and aligned your energy is becoming. This is why I love this work.</p>
+        <p>And today, I want you to just be.</p>
+        <p>Let go of the practices. The lists. The have-tos and the shoulds. For one day, set all of it down. The only thing you carry today is your totem, for those moments when fear rises. Everything else, release it. Just for today.</p>
+        <p>Because part of raising your frequency is learning to be in the in-between. To let the river carry you. To surrender and trust that the Universe has your back. I believe deeply in daily practice, I can feel it in my energy when I skip mine. But a day here and there to simply be, with no doing? That's part of the medicine too.</p>
+      </div>
+      <div class="notice">
+        <div class="notice-label">Today's reminder</div>
+        <p>The more relaxed you are, the more you're able to receive and manifest. The more you surrender and trust the Universe, the more it surprises you with an incredible life.</p>
+      </div>
+      <div class="pullquote"><p>There is nothing you need to push against. Nothing you need to do. Just be.</p></div>
+      <div class="body-copy">
+        <p>A little story. I once challenged a client to take a full day to just be. No meditations, no gratitude list, nothing. It was the hardest thing for her, because the practices had become part of her, like brushing her teeth. But she did it. And she came back and told me it was one of the most blissful, recalibrating days she'd had. It was also her biggest sales day ever. Sometimes stepping back is exactly how we tune into what's aligned.</p>
+      </div>
+      <div class="notice">
+        <div class="notice-label">The real lesson underneath today</div>
+        <p>Everything I share in these 21 days is a suggestion. These practices work, they work for me, and I've studied with a lot of the greats. But even from teachers I adore, not every tool felt aligned for me. Some felt forced, and forced never feels good. Yes, consistency is what creates real shifts, but it has to come from alignment. You're designed differently than me, than everyone, you saw that in your chart. So take what feels good, and tweak or drop what doesn't. That's the whole point of recalibrating: doing what's actually right for you.</p>
+      </div>`},
+    {id:"practice", label:"Today", icon:"🌙", content:`
+      <div class="body-copy">
+        <p>There's no checklist today. Just this: move through your day and let yourself be present with it. Notice the sky. Taste your food. Feel the water when you wash your hands. Let it be simple.</p>
+        <p>Now and then, pause and check in with your body. Where are you holding tension? If you feel resistance or fear anywhere, take a slow breath and let it soften, from the tips of your toes all the way to the top of your head.</p>
+        <p>And if a fear comes up that won't let go, reach for your totem. Transfer that energy into it the way you learned yesterday, and let the totem transmute it. That's the one practice you keep today. Everything else, you get to put down.</p>
+      </div>
+      <div class="ground-note">This isn't a day off from the journey. Resting and surrendering <em>is</em> the journey today. The relaxing is the practice.</div>
+      <div class="share-note">If you feel called, <a href="https://www.skool.com/embody-wealth?c=a0afd40b879a407f8c686bc5a396fea0&s=newest-cm&fl=" target="_blank" rel="noopener">tell us how it feels to just be inside the community</a>. No pressure. Only if it feels good.</div>`},
+    {id:"affirm", label:"Affirmation", icon:"✶", content:`
+      <div class="affirmation">
+        <p>Today I allow myself to just be.</p>
+        <p>To fully relax and allow. To surrender to the Universe.</p>
+        <p class="affirm-seal">There is nothing I need to push against or do.</p>
+      </div>`}
+  ]
+};
+
 /* ---- WELCOME (Day 0) — the doorway before the path begins ---- */
 const WELCOME = {
   n:0, name:"Welcome", title:"Welcome In", isWelcome:true,
@@ -1554,7 +1608,7 @@ function findDay(n){ return n===0 ? WELCOME : flatDays.find(d=>d.n===n); }
      21 = everything unlocked
    Change this ONE number to release more days.
    ============================================================ */
-const UNLOCKED_THROUGH = 9;
+const UNLOCKED_THROUGH = 10;
 function isUnlocked(n){ return n===0 || n<=UNLOCKED_THROUGH; }
 
 

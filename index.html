@@ -402,6 +402,25 @@ main.stage{
 
 /* numbered ritual steps */
 .ritual-intro{font-family:var(--sans);font-size:15px;line-height:1.55;color:var(--lavender-soft);font-style:italic;margin-bottom:14px}
+
+/* defined/undefined center toggle */
+.hd-toggle{display:flex;gap:8px;background:rgba(185,168,224,0.08);border:1px solid rgba(185,168,224,0.2);border-radius:14px;padding:6px;margin:4px 0 22px}
+.hd-toggle button{
+  flex:1 1 0;font-family:var(--sans);font-size:14.5px;font-weight:600;color:var(--text-soft);
+  background:none;border:none;cursor:pointer;padding:12px 14px;border-radius:10px;transition:all .15s ease;
+}
+.hd-toggle button:hover{color:var(--text)}
+.hd-toggle button.active{
+  color:#fff;background:linear-gradient(120deg, rgba(201,184,236,0.9), rgba(155,134,201,0.85));
+  box-shadow:0 4px 14px rgba(124,100,168,0.4);
+}
+.hd-variant{display:none;animation:fade .3s ease}
+.hd-variant.active{display:block}
+.hd-variant-head{
+  font-family:var(--serif);font-weight:600;font-size:22px;color:#fff;margin-bottom:6px;
+}
+.hd-variant-sub{font-family:var(--sans);font-size:14px;color:var(--lavender-soft);margin-bottom:16px;font-style:italic}
+.hd-prompt{font-family:var(--sans);font-size:13px;color:var(--text-dim);text-align:center;margin-bottom:10px;letter-spacing:.5px}
 .ritual{list-style:none;margin:0 0 26px;padding:0;counter-reset:none}
 .ritual li{display:flex;gap:16px;padding:16px 0;border-top:1px solid rgba(185,168,224,0.14);
   font-family:var(--sans);font-size:16px;line-height:1.6;color:var(--text)}
@@ -1349,7 +1368,7 @@ PHASES[1].days[0] = {
         </div>
         <audio preload="metadata" src="https://www.dropbox.com/scl/fi/lm15twgj05iqixbzirpag/energetic-clearing-meditation.mp3?rlkey=l6smrmpznfwjartkpgsxgecue&raw=1"></audio>
       </div>
-      <div class="ground-note">Don't have your chart yet? <a href="https://www.myhumandesign.com" target="_blank" rel="noopener">Pull your free chart here</a> and note your Type, Strategy, Authority, and which centers are colored vs white. You'll use it all week.</div>
+      <div class="ground-note">Don't have your chart yet? <a href="https://www.aurailia.com/human-design-free-guide" target="_blank" rel="noopener">Fill out your birth info here</a> and I'll send you your chart along with a guide to your energy type. Note your Type, Strategy, Authority, and which centers are colored vs white. You'll use it all week.</div>
       <div class="share-note">What did you discover in your chart? <a href="https://www.skool.com/embody-wealth?c=a0afd40b879a407f8c686bc5a396fea0&s=newest-cm&fl=" target="_blank" rel="noopener">Share it inside the community</a>. I'd love to hear it.</div>`},
     {id:"reflect", label:"Reflect", icon:"🪞", content:`
       <div class="body-copy">
@@ -1375,6 +1394,110 @@ PHASES[1].days[0] = {
       <div class="affirmation">
         <p>Today I continue to align with my energetic blueprint.</p>
         <p class="affirm-seal">The more I experiment with it, the more I become who I was born to be.</p>
+      </div>`}
+  ]
+};
+
+/* ---- Day 9 — The Spleen (defined/undefined split) ---- */
+PHASES[1].days[1] = {
+  n:9, name:"The Spleen · Fear",
+  title:"The Spleen",
+  sub:"Your center of intuition, fear, and gut knowing. Today we de-condition it.",
+  tabs:[
+    {id:"teaching", label:"The Teaching", icon:"✦", content:`
+      <div class="audio-player">
+        <button class="play-btn" aria-label="Play training">${'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>'}</button>
+        <div class="audio-body">
+          <div class="audio-head">
+            <span class="audio-label">Day 9 Training</span>
+            <span class="audio-time"><span class="audio-cur">0:00</span> / <span class="audio-dur">--:--</span></span>
+          </div>
+          <div class="audio-title">Press play, then read along below</div>
+          <div class="audio-track"><div class="audio-fill"></div></div>
+        </div>
+        <audio preload="metadata" src="https://www.dropbox.com/scl/fi/oj8p2pjqs442c3brcespx/day-9-recalibrate.mp3?rlkey=m9y2aqyiac3jwv0hhl37l9fa4&raw=1"></audio>
+      </div>
+      <div class="body-copy">
+        <p>This week we play in the energy centers of your Human Design bodygraph, and I could not love this work more. Your centers are gifts. They hold so much of your conditioning, and learning to read them is how we recalibrate your energy at the root.</p>
+        <p>Today we start with the Spleen. And I want to clear up something most teachers get half-right. People say the Spleen is where your fears live. That's kind of true, but not the whole story. The Spleen is your survival center, and it speaks as intuition, a fast, quiet, in-the-moment knowing about whether something is right for you, whether the timing's off, whether something needs to shift.</p>
+        <p>Here's what actually happens. Your Spleen gives you a hit that something's off. Instead of receiving it as guidance, we build a story around it. We distort it into fear. And that fear takes over, it stops you from making the offer, taking the trip, building the thing, hitting publish. That's not your intuition failing you. That's a clear signal getting scrambled on the way up.</p>
+      </div>
+      <div class="notice">
+        <div class="notice-label">Today's reminder</div>
+        <p>Fear can be a distortion of your intuitive hints. When you take a moment to tune into what your fear is actually trying to tell you, you can transmute it into pure guidance.</p>
+      </div>
+      <div class="pullquote"><p>Fear isn't the enemy. It's intuition that got scrambled on the way up.</p></div>
+      <div class="body-copy">
+        <p>And fear doesn't disappear just because you're raising your frequency. It's a daily thing, especially when you're up-leveling or building a business. I face it and work through it constantly. The goal isn't to never feel fear. It's to stop letting it run you.</p>
+        <p>How you work with it depends on your chart. Look at the Spleen, the triangle on the far left of your bodygraph. Colored in means defined. White means open. Both get a ritual today, tuned to how your energy actually moves.</p>
+      </div>
+      <div class="notice">
+        <div class="notice-label">A note from me · I have an open Spleen</div>
+        <p>When I finally understood that the fears I felt around money and my business often weren't even mine, everything shifted. I'm not someone with much fear around money or trying new things. But put me near someone who is, and I'd feel it in my body and take it on as my own. Now I can tell the difference. When it's not mine, I let it wash over me and release it. When it actually is mine, I shift and read it as guidance instead. That's the whole practice.</p>
+      </div>`},
+    {id:"practice", label:"The Practice", icon:"🌙", content:`
+      <div class="body-copy">
+        <p>Today's ritual transmutes fear into positive energy, and it's tuned to your specific design. The key with all of these: do them feeling good about it. If something needs adjusting to feel right for you, adjust it.</p>
+      </div>
+      <ol class="ritual">
+        <li><span class="ritual-n">1</span><div><strong>Have a magical day, in advance.</strong> First thing, live your day before it happens. Say <em>thank you</em> for each thing as if it already went beautifully, and close with <em>and thank you for the great news coming to me today.</em></div></li>
+        <li><span class="ritual-n">2</span><div><strong>Count your blessings.</strong> Write 5 new things you're grateful for and why. Read them back with <em>thank you, thank you, thank you</em>. You can do this in the Reflect tab.</div></li>
+        <li><span class="ritual-n">3</span><div><strong>Find your totem.</strong> A crystal, rock, necklace, whatever feels right. This becomes your anchor for today's fear ritual. Keep it on you and use it every time fear rises in your body.</div></li>
+        <li><span class="ritual-n">4</span><div><strong>Tonight, your gratitude.</strong> Before bed, think of the best thing that happened today, tune into the feeling, and say <em>thank you, thank you, thank you</em>.</div></li>
+      </ol>
+      <p class="ritual-intro">Your totem ritual, based on your Spleen. Tap the one that matches your chart.</p>
+      <div class="hd-toggle" data-toggle="spleen">
+        <button data-variant="defined" class="active">Defined Spleen</button>
+        <button data-variant="undefined">Undefined / Open Spleen</button>
+      </div>
+      <div class="hd-variant active" data-variant-panel="defined">
+        <div class="hd-variant-head">Transforming fear into guidance</div>
+        <div class="hd-variant-sub">Your Spleen is colored in, so it's consistent. You can trust your moment-to-moment hits. The work is learning to read them as guidance instead of collapsing into fear.</div>
+        <ol class="ritual">
+          <li><span class="ritual-n">1</span><div>Notice the fear, stress, or scarcity as it comes up, and tune into where it sits in your body.</div></li>
+          <li><span class="ritual-n">2</span><div>Visualize that fear transferring out of you and into your totem.</div></li>
+          <li><span class="ritual-n">3</span><div>Ask your totem to transform the fear and distill it down to its pure intuitive guidance.</div></li>
+          <li><span class="ritual-n">4</span><div>Ask what the fear is actually trying to tell you. What is the guidance underneath it?</div></li>
+          <li><span class="ritual-n">5</span><div>Trust whatever comes first, whatever feels good and right. Honor it and act on it as much as you can, following your Strategy and Authority first when you take action. If nothing comes, don't force it. Let your totem keep working and ask again later. The answer might arrive while you sleep, or when you've stopped trying.</div></li>
+        </ol>
+      </div>
+      <div class="hd-variant" data-variant-panel="undefined">
+        <div class="hd-variant-head">Releasing fear</div>
+        <div class="hd-variant-sub">Your Spleen is white, so you're taking in and amplifying fear from the people around you. It's often not even yours. That doesn't mean you're not intuitive, you receive it other ways. This ritual lets what isn't yours move through and out.</div>
+        <ol class="ritual">
+          <li><span class="ritual-n">1</span><div>Notice the fear, stress, or scarcity as it comes up, and tune into where it sits in your body.</div></li>
+          <li><span class="ritual-n">2</span><div>Ask your totem to carry this fear for you and help you release it.</div></li>
+          <li><span class="ritual-n">3</span><div>Touch your totem and visualize the fear transferring into it. Really feel and see it leaving you.</div></li>
+          <li><span class="ritual-n">4</span><div>Ask the totem to transform that fear into love and positive energy, and let it wash all the way out of you. Do this as often as you need through the day. You're always taking in energy, even scrolling social media, there are people behind every post, so return to it whenever something that isn't yours rises up.</div></li>
+        </ol>
+      </div>
+      <div class="ground-note"><strong style="color:var(--lavender-soft)">Every night, cleanse your totem.</strong> Whichever ritual is yours, before bed set your totem somewhere outside your room, near a window if you can. Thank it for carrying your fears, and ask it to release the positive energy it made back out into the world while you sleep, to whoever needs it. It can even go back to whoever that fear came from, but transmuted into positive energy now, so you're never sending fear back to anyone. You don't want to hold onto energy that was never yours. Let it go, and wake up with a clean slate.</div>
+      <div class="ground-note">Not sure if your Spleen is defined or open? Check your chart against the diagram on Day 8. Defined centers are colored in; open ones are white. <a href="https://www.myhumandesign.com" target="_blank" rel="noopener">Need your chart? Pull it here.</a></div>
+      <div class="share-note">If you feel called, <a href="https://www.skool.com/embody-wealth?c=a0afd40b879a407f8c686bc5a396fea0&s=newest-cm&fl=" target="_blank" rel="noopener">share how the totem ritual felt inside the community</a>. I'd love to hear it.</div>`},
+    {id:"reflect", label:"Reflect", icon:"🪞", content:`
+      <div class="body-copy">
+        <p>When fear came up today, what was underneath it? Sometimes writing it out is how the guidance reveals itself.</p>
+      </div>
+      <div class="prompt-card">
+        <div class="prompt-q">A fear that came up today, where I felt it in my body, and what it might be trying to tell me.</div>
+        <textarea class="journal" data-journal="d9-fear" placeholder="Write it out. This saves on its own."></textarea>
+        <div class="journal-saved" data-saved="d9-fear"></div>
+      </div>
+      <div class="body-copy" style="margin-top:28px">
+        <p>And your 5 gratitudes for today, with a why for each.</p>
+      </div>
+      <div class="gratitude-journal">
+        <div class="grat-row"><span class="grat-n">1</span><div class="grat-fields"><input class="journal-line" data-journal="d9-g1" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d9-w1" placeholder="because..."></textarea></div></div>
+        <div class="grat-row"><span class="grat-n">2</span><div class="grat-fields"><input class="journal-line" data-journal="d9-g2" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d9-w2" placeholder="because..."></textarea></div></div>
+        <div class="grat-row"><span class="grat-n">3</span><div class="grat-fields"><input class="journal-line" data-journal="d9-g3" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d9-w3" placeholder="because..."></textarea></div></div>
+        <div class="grat-row"><span class="grat-n">4</span><div class="grat-fields"><input class="journal-line" data-journal="d9-g4" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d9-w4" placeholder="because..."></textarea></div></div>
+        <div class="grat-row"><span class="grat-n">5</span><div class="grat-fields"><input class="journal-line" data-journal="d9-g5" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d9-w5" placeholder="because..."></textarea></div></div>
+        <div class="journal-saved" data-saved="d9-g1"></div>
+      </div>`},
+    {id:"affirm", label:"Affirmation", icon:"✶", content:`
+      <div class="affirmation">
+        <p>Today I release my fears and tune into my body for guidance.</p>
+        <p class="affirm-seal">What used to scare me now shows me the way.</p>
       </div>`}
   ]
 };
@@ -1431,7 +1554,7 @@ function findDay(n){ return n===0 ? WELCOME : flatDays.find(d=>d.n===n); }
      21 = everything unlocked
    Change this ONE number to release more days.
    ============================================================ */
-const UNLOCKED_THROUGH = 7;
+const UNLOCKED_THROUGH = 9;
 function isUnlocked(n){ return n===0 || n<=UNLOCKED_THROUGH; }
 
 
@@ -1649,6 +1772,7 @@ function renderStage(){
   });
   bindAudio(stage);
   bindJournal(stage);
+  bindToggles(stage);
   bindFoot(d);
 }
 
@@ -1722,6 +1846,10 @@ const NOTES_MAP = [
   {day:8, name:"Your Energetic Blueprint", entries:[
     {type:"text", key:"d8-chart", label:"My Human Design chart notes"},
     {type:"gratitude", prefix:"d8", label:"Gratitude"}
+  ]},
+  {day:9, name:"The Spleen", entries:[
+    {type:"text", key:"d9-fear", label:"A fear and what it was telling me"},
+    {type:"gratitude", prefix:"d9", label:"Gratitude"}
   ]}
 ];
 function notesHasContent(store){
@@ -1861,6 +1989,21 @@ function bindJournal(stage){
       autosize();
       const s=loadJournal(); s[key]=field.value; saveJournal(s);
       showSaved();
+    });
+  });
+}
+
+function bindToggles(stage){
+  stage.querySelectorAll('.hd-toggle').forEach(tog=>{
+    const btns=tog.querySelectorAll('button');
+    btns.forEach(btn=>{
+      btn.onclick=()=>{
+        const v=btn.dataset.variant;
+        btns.forEach(b=>b.classList.toggle('active', b===btn));
+        stage.querySelectorAll('[data-variant-panel]').forEach(p=>{
+          p.classList.toggle('active', p.dataset.variantPanel===v);
+        });
+      };
     });
   });
 }

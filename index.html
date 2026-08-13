@@ -485,6 +485,29 @@ main.stage{
 .rampage-btn:hover{transform:translateY(-1px)}
 .rampage-btn svg{width:18px;height:18px}
 
+/* soft offer card (business alignment blueprint) */
+.offer-card{
+  margin:26px 0 6px;padding:26px 28px;border-radius:18px;
+  background:linear-gradient(150deg, rgba(201,184,236,0.16), rgba(124,100,168,0.12));
+  border:1px solid rgba(201,184,236,0.32);
+  box-shadow:0 12px 34px rgba(80,62,130,0.28);
+}
+.offer-label{
+  font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  color:var(--lavender-bright);margin-bottom:10px;
+}
+.offer-text{
+  font-family:var(--sans);font-size:15.5px;line-height:1.6;color:var(--text);margin-bottom:18px;
+}
+.offer-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--sans);font-size:14.5px;font-weight:600;color:#fff;text-decoration:none;
+  background:linear-gradient(135deg,#8d76bf,#a892d4);
+  border-radius:12px;padding:13px 26px;box-shadow:0 8px 20px rgba(141,118,191,0.4);
+  transition:transform .15s ease;
+}
+.offer-btn:hover{transform:translateY(-1px)}
+
 /* notice callout (teaching) */
 .notice{
   background:linear-gradient(135deg, rgba(232,200,122,0.12), rgba(232,200,122,0.05));
@@ -1473,7 +1496,12 @@ PHASES[1].days[1] = {
       </div>
       <div class="ground-note"><strong style="color:var(--lavender-soft)">Every night, cleanse your totem.</strong> Whichever ritual is yours, before bed set your totem somewhere outside your room, near a window if you can. Thank it for carrying your fears, and ask it to release the positive energy it made back out into the world while you sleep, to whoever needs it. It can even go back to whoever that fear came from, but transmuted into positive energy now, so you're never sending fear back to anyone. You don't want to hold onto energy that was never yours. Let it go, and wake up with a clean slate.</div>
       <div class="ground-note">Not sure if your Spleen is defined or open? Check your chart against the diagram on Day 8. Defined centers are colored in; open ones are white. <a href="https://www.myhumandesign.com" target="_blank" rel="noopener">Need your chart? Pull it here.</a></div>
-      <div class="share-note">If you feel called, <a href="https://www.skool.com/embody-wealth?c=a0afd40b879a407f8c686bc5a396fea0&s=newest-cm&fl=" target="_blank" rel="noopener">share how the totem ritual felt inside the community</a>. I'd love to hear it.</div>`},
+      <div class="share-note">If you feel called, <a href="https://www.skool.com/embody-wealth?c=a0afd40b879a407f8c686bc5a396fea0&s=newest-cm&fl=" target="_blank" rel="noopener">share how the totem ritual felt inside the community</a>. I'd love to hear it.</div>
+      <div class="offer-card">
+        <div class="offer-label">Want to go deeper?</div>
+        <div class="offer-text">Today was one piece of your chart. If you're curious what your <em>whole</em> design says about your business, my Business Alignment Blueprint reads your full Human Design through the lens of your business, delivered as your own beautiful interactive artifact, plus a 1:1 call to turn it into real strategy. If you're feeling the pull, come take a look.</div>
+        <a class="offer-btn" href="https://www.aurailia.com/business-alignment-bundle" target="_blank" rel="noopener">Learn more →</a>
+      </div>`},
     {id:"reflect", label:"Reflect", icon:"🪞", content:`
       <div class="body-copy">
         <p>When fear came up today, what was underneath it? Sometimes writing it out is how the guidance reveals itself.</p>

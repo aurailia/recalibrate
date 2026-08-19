@@ -27,7 +27,7 @@
   --sans:'Inter',system-ui,sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{min-height:100%}
+html,body{min-height:100%;overscroll-behavior-y:none}
 body{
   font-family:var(--sans);
   color:var(--text);
@@ -507,6 +507,47 @@ main.stage{
   transition:transform .15s ease;
 }
 .offer-btn:hover{transform:translateY(-1px)}
+
+/* open center entries (Day 13) — accordion */
+.center-entry{
+  background:rgba(185,168,224,0.06);border:1px solid rgba(185,168,224,0.18);
+  border-radius:14px;margin-bottom:12px;overflow:hidden;
+}
+.center-head{
+  width:100%;text-align:left;background:none;border:none;cursor:pointer;
+  padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;
+}
+.center-name{
+  font-family:var(--serif);font-weight:600;font-size:20px;color:#fff;
+}
+.center-theme{
+  font-family:var(--sans);font-size:12.5px;color:var(--lavender-soft);margin-top:2px;
+}
+.center-head-left{display:flex;flex-direction:column}
+.center-chevron{
+  flex:0 0 auto;color:var(--lavender);transition:transform .25s ease;
+}
+.center-chevron svg{width:20px;height:20px;display:block}
+.center-entry.open .center-chevron{transform:rotate(180deg)}
+.center-body{
+  max-height:0;overflow:hidden;transition:max-height .3s ease;
+  padding:0 20px;
+}
+.center-entry.open .center-body{max-height:900px;padding:0 20px 20px}
+.center-desc{font-family:var(--sans);font-size:15px;line-height:1.6;color:var(--text-soft);margin-bottom:12px}
+.center-govern{
+  font-family:var(--sans);font-size:14px;line-height:1.55;color:var(--text);margin-bottom:12px;
+  background:rgba(155,134,201,0.1);border-radius:10px;padding:12px 14px;
+}
+.center-govern strong{color:var(--lavender-bright)}
+.center-mantra{
+  font-family:var(--serif);font-style:italic;font-size:16px;line-height:1.5;color:var(--lavender-bright);
+  border-left:3px solid var(--lavender);padding-left:14px;
+}
+.center-mantra span{
+  display:block;font-family:var(--sans);font-style:normal;font-size:11px;font-weight:700;
+  letter-spacing:1.5px;text-transform:uppercase;color:var(--text-dim);margin-bottom:5px;
+}
 
 /* notice callout (teaching) */
 .notice{
@@ -1774,6 +1815,304 @@ PHASES[1].days[4] = {
   ]
 };
 
+/* ---- Day 13 — Your Open Centers (no training audio) ---- */
+PHASES[1].days[5] = {
+  n:13, name:"Your Open Centers",
+  title:"Your Open Centers",
+  sub:"Where you take in and amplify energy that was never yours to carry.",
+  tabs:[
+    {id:"teaching", label:"The Teaching", icon:"✦", content:`
+      <div class="body-copy">
+        <p>Today we connect with your open energy centers. Your open centers, the white shapes in your chart, are where you're most prone to conditioning. They're where you take in energy from other people, and then amplify it.</p>
+        <p>Say you have an open Solar Plexus, the triangle on the right. You'll feel the emotions and moods of the people around you, and you'll feel them stronger than they do, because you're amplifying that energy. That heaviness you sometimes can't explain? A lot of the time, it was never yours to begin with.</p>
+        <p>We carry so much of other people's energy in these open centers. The freedom comes from learning to recognize it, feel through it, and let it go.</p>
+      </div>
+      <div class="notice">
+        <div class="notice-label">Today's reminder</div>
+        <p>Let go of the energy that isn't yours. Get to know where you take in energy from others.</p>
+      </div>
+      <div class="pullquote"><p>When you know the energy isn't yours, you can finally set it down.</p></div>
+      <div class="body-copy">
+        <p>Open the "Your Open Centers" tab to find a short description and a mantra for each center. Look at your chart, see which centers are white, and read the ones that are yours.</p>
+      </div>`},
+    {id:"centers", label:"Your Open Centers", icon:"◇", content:`
+      <div class="body-copy">
+        <p>There's real wisdom in your open centers. When you understand that the energy you feel there isn't yours, you can feel through it and let it go. Find your white (open) centers on the chart below, then tap each one to read what it means for you and the mantra to carry.</p>
+      </div>
+      <div class="ref-diagram">
+        <img src="energy-centers.jpg" alt="The nine Human Design energy centers">
+        <div class="ref-caption">Your open centers are the white shapes. Tap yours below.</div>
+      </div>
+      <div class="center-entry">
+        <button class="center-head" data-center><span class="center-head-left"><span class="center-name">Open Head</span><span class="center-theme">Inspiration · mental pressure</span></span><span class="center-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+        <div class="center-body">
+          <div class="center-govern"><strong>What the Head governs:</strong> This is a pressure center. It drives the mental question "what's worth thinking about?" Defined, it's a steady source of inspiration. Open, you absorb the mental pressure of everyone around you.</div>
+          <div class="center-desc">You pick up ideas, inspirations, and questions from those around you, even from scrolling social media. You'll feel pressure to follow through on every one. When you feel it, pause, write the ideas down, and come back with your Authority to choose which to follow. Not having "original" ideas doesn't mean you lack them, you just process them differently, birthing your own unique spin on the inspiration that comes in.</div>
+          <div class="center-mantra"><span>Mantra</span>I let go of the need to have completely original ideas. I let go of the pressure to follow up on every inspiration.</div>
+        </div>
+      </div>
+      <div class="center-entry">
+        <button class="center-head" data-center><span class="center-head-left"><span class="center-name">Open Ajna</span><span class="center-theme">Thinking · certainty</span></span><span class="center-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+        <div class="center-body">
+          <div class="center-govern"><strong>What the Ajna governs:</strong> The mind, how you process, conceptualize, and make sense of information. Defined, thinking is fixed and consistent. Open, your mind is flexible and takes in many ways of thinking.</div>
+          <div class="center-desc">This center makes sense of inspiration and sees the whole and its parts. Open, you can feel pressure to be certain and to have all the answers. Most of your views are borrowed from outside, which makes you wonderfully open-minded and able to hold many perspectives. You may have struggled with processing and retaining information.</div>
+          <div class="center-mantra"><span>Mantra</span>It's OK to be uncertain. Truth is never singular. My gift is seeing the different perspectives.</div>
+        </div>
+      </div>
+      <div class="center-entry">
+        <button class="center-head" data-center><span class="center-head-left"><span class="center-name">Open Throat</span><span class="center-theme">Expression · manifestation</span></span><span class="center-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+        <div class="center-body">
+          <div class="center-govern"><strong>What the Throat governs:</strong> Communication, expression, and taking action. It's the center of manifestation, where energy becomes words and doing. Open, you feel pressure around being heard.</div>
+          <div class="center-desc">You can feel the need to talk, to get attention. Your wisdom comes in learning that drawing the right attention means stepping back, listening, staying in your power, and knowing when to speak.</div>
+          <div class="center-mantra"><span>Mantra</span>I don't need to talk to get attention. I'll speak when I feel inspired.</div>
+        </div>
+      </div>
+      <div class="center-entry">
+        <button class="center-head" data-center><span class="center-head-left"><span class="center-name">Open G-Center</span><span class="center-theme">Identity · love · direction</span></span><span class="center-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+        <div class="center-body">
+          <div class="center-govern"><strong>What the G-Center governs:</strong> Your sense of self, love, and life direction. Defined, you have a fixed identity. Open, your identity is fluid and shaped by who you're with and where you are.</div>
+          <div class="center-desc">You're many-sided, and people see their own reflection in you. You're not designed to have a fixed identity. You may feel pressure to be consistent, when your nature is fluid. You're here to try on different costumes in this lifetime.</div>
+          <div class="center-mantra"><span>Mantra</span>I am different with different people, and that is OK.</div>
+        </div>
+      </div>
+      <div class="center-entry">
+        <button class="center-head" data-center><span class="center-head-left"><span class="center-name">Open Heart / Will</span><span class="center-theme">Willpower · worth</span></span><span class="center-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+        <div class="center-body">
+          <div class="center-govern"><strong>What the Heart governs:</strong> Willpower, ego, self-worth, and the energy to make and keep promises. Defined, willpower is consistent. Open, it comes and goes, and it was never meant to be forced.</div>
+          <div class="center-desc">Open here, there's an innate feeling of needing to prove yourself, which can push you to make promises you can't keep, or to compare yourself to others. Don't do it.</div>
+          <div class="center-mantra"><span>Mantra</span>I don't need to prove myself to anyone. I am worthy just for being me.</div>
+        </div>
+      </div>
+      <div class="center-entry">
+        <button class="center-head" data-center><span class="center-head-left"><span class="center-name">Open Spleen</span><span class="center-theme">Intuition · safety · wellbeing</span></span><span class="center-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+        <div class="center-body">
+          <div class="center-govern"><strong>What the Spleen governs:</strong> Survival, intuition, health, and the feeling of safety in the moment. Open, you absorb others' fears and can cling to what feels familiar. (This was your Day 9 focus.)</div>
+          <div class="center-desc">There's a need to feel safe, which can lead to holding onto people and things that aren't good for you. You're not designed to be spontaneous the way a defined Spleen is.</div>
+          <div class="center-mantra"><span>Mantra</span>It's OK that I'm not spontaneous like others. I am safe. I can let go of what isn't good for me.</div>
+        </div>
+      </div>
+      <div class="center-entry">
+        <button class="center-head" data-center><span class="center-head-left"><span class="center-name">Open Solar Plexus</span><span class="center-theme">Emotions · sensitivity</span></span><span class="center-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+        <div class="center-body">
+          <div class="center-govern"><strong>What the Solar Plexus governs:</strong> Emotions, moods, desire, and sensitivity. Defined, you have your own emotional wave. Open, you soak up and amplify the emotional energy of everyone around you.</div>
+          <div class="center-desc">You take on other people's emotions, you're an emotional empath. You may avoid confrontation or shape-shift around people to make them feel better, so you can feel better through them.</div>
+          <div class="center-mantra"><span>Mantra</span>It's not my job to make someone else feel better. I'm not a sponge for others' emotions. I acknowledge the emotions and let them pass through.</div>
+        </div>
+      </div>
+      <div class="center-entry">
+        <button class="center-head" data-center><span class="center-head-left"><span class="center-name">Open Sacral</span><span class="center-theme">Life force · work energy</span></span><span class="center-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+        <div class="center-body">
+          <div class="center-govern"><strong>What the Sacral governs:</strong> Life-force energy, work, and vitality. Defined (Generators), it's a deep, renewable well of energy. Open, you have energy in bursts and are not built for relentless doing.</div>
+          <div class="center-desc">You don't have consistent life-force energy for constant doing. You're not designed to work as hard as those with a defined Sacral. You're a smart worker, not a hard worker, and you're vulnerable to burnout.</div>
+          <div class="center-mantra"><span>Mantra</span>It's OK not to work as much as others. My success is not proportional to my effort.</div>
+        </div>
+      </div>
+      <div class="center-entry">
+        <button class="center-head" data-center><span class="center-head-left"><span class="center-name">Open Root</span><span class="center-theme">Drive · pressure to act</span></span><span class="center-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+        <div class="center-body">
+          <div class="center-govern"><strong>What the Root governs:</strong> Adrenaline, drive, and the pressure to get things done. A pressure center. Open, you take on outside pressure and can feel a frantic rush to be free of it.</div>
+          <div class="center-desc">You don't have consistent access to the pressure that drives things forward, so you might sit on unfinished projects without the urge to move. You're driven by other people's adrenalized energy without even realizing it.</div>
+          <div class="center-mantra"><span>Mantra</span>It's OK to feel no pressure when I'm alone. I can enjoy the present, or borrow this energy when I need it.</div>
+        </div>
+      </div>
+      <div class="ground-note">Pay attention when you're trying to be someone you're not. So many of us are pressured to be do-ers we were never designed to be. Notice when you're feeling energy that isn't yours, learn from it, borrow it for the lesson or the boost, then release it and let it go.</div>`},
+    {id:"practice", label:"The Practice", icon:"🌙", content:`
+      <div class="body-copy">
+        <p>Today you get to know your open centers and start clearing what isn't yours.</p>
+      </div>
+      <ol class="ritual">
+        <li><span class="ritual-n">1</span><div><strong>Connect with your vision.</strong> First thing, connect with the life you desire and the person you're becoming.</div></li>
+        <li><span class="ritual-n">2</span><div><strong>Gratitude.</strong> Write 5 things you're grateful for and why, with <em>thank you, thank you, thank you</em> after each.</div></li>
+        <li><span class="ritual-n">3</span><div><strong>Clear your open centers.</strong> Take a few minutes somewhere alone, no phone, no TV, no one around. Sit still, close your eyes, and with your mind's eye see the energy in your open centers floating away. Do this a few times today for a couple of minutes. As you set the intention to clear them, you'll feel the energy leaving your body and bringing you back into alignment.</div></li>
+        <li><span class="ritual-n">4</span><div><strong>Keep your totem with you.</strong> When fear rises, transfer it and follow your Spleen ritual from Day 9.</div></li>
+        <li><span class="ritual-n">5</span><div><strong>Clearing meditation before bed.</strong> Listen to the Energetic Clearing meditation below to release what's attached to you before sleep, so you wake up refreshed. Do this every night if you can.</div></li>
+        <li><span class="ritual-n">6</span><div><strong>Tonight, your gratitude.</strong> Think of the best thing that happened today and say <em>thank you, thank you, thank you</em>.</div></li>
+      </ol>
+      <div class="audio-player">
+        <button class="play-btn" aria-label="Play meditation">${'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>'}</button>
+        <div class="audio-body">
+          <div class="audio-head">
+            <span class="audio-label">Energetic Clearing Meditation</span>
+            <span class="audio-time"><span class="audio-cur">0:00</span> / <span class="audio-dur">--:--</span></span>
+          </div>
+          <div class="audio-title">Clear what isn't yours before you sleep</div>
+          <div class="audio-track"><div class="audio-fill"></div></div>
+        </div>
+        <audio preload="metadata" src="https://www.dropbox.com/scl/fi/lm15twgj05iqixbzirpag/energetic-clearing-meditation.mp3?rlkey=l6smrmpznfwjartkpgsxgecue&raw=1"></audio>
+      </div>
+      <div class="share-note">If you feel called, <a href="https://www.skool.com/embody-wealth?c=a0afd40b879a407f8c686bc5a396fea0&s=newest-cm&fl=" target="_blank" rel="noopener">share which open center surprised you most inside the community</a>. I'd love to hear it.</div>`},
+    {id:"reflect", label:"Reflect", icon:"🪞", content:`
+      <div class="body-copy">
+        <p>Which of your centers are open, and what have you been carrying that was never yours? Naming it is how you start setting it down.</p>
+      </div>
+      <div class="prompt-card">
+        <div class="prompt-q">My open centers, and the energy or patterns I now realize I've been carrying that isn't mine:</div>
+        <textarea class="journal" data-journal="d13-centers" placeholder="Write what you notice. This saves on its own."></textarea>
+        <div class="journal-saved" data-saved="d13-centers"></div>
+      </div>
+      <div class="body-copy" style="margin-top:28px">
+        <p>And your 5 gratitudes for today, with a why for each.</p>
+      </div>
+      <div class="gratitude-journal">
+        <div class="grat-row"><span class="grat-n">1</span><div class="grat-fields"><input class="journal-line" data-journal="d13-g1" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d13-w1" placeholder="because..."></textarea></div></div>
+        <div class="grat-row"><span class="grat-n">2</span><div class="grat-fields"><input class="journal-line" data-journal="d13-g2" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d13-w2" placeholder="because..."></textarea></div></div>
+        <div class="grat-row"><span class="grat-n">3</span><div class="grat-fields"><input class="journal-line" data-journal="d13-g3" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d13-w3" placeholder="because..."></textarea></div></div>
+        <div class="grat-row"><span class="grat-n">4</span><div class="grat-fields"><input class="journal-line" data-journal="d13-g4" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d13-w4" placeholder="because..."></textarea></div></div>
+        <div class="grat-row"><span class="grat-n">5</span><div class="grat-fields"><input class="journal-line" data-journal="d13-g5" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d13-w5" placeholder="because..."></textarea></div></div>
+        <div class="journal-saved" data-saved="d13-g1"></div>
+      </div>`},
+    {id:"affirm", label:"Affirmation", icon:"✶", content:`
+      <div class="affirmation">
+        <p>I release the energy that does not belong to me.</p>
+        <p class="affirm-seal">I release the need to create stories, and let the emotions just be.</p>
+      </div>`}
+  ]
+};
+
+/* ---- Day 14 — Your Authority (closes Week Two) ---- */
+PHASES[1].days[6] = {
+  n:14, name:"Your Authority",
+  title:"Your Authority",
+  sub:"How you're designed to make decisions your body can trust.",
+  tabs:[
+    {id:"teaching", label:"The Teaching", icon:"✦", content:`
+      <div class="audio-player">
+        <button class="play-btn" aria-label="Play message">${'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>'}</button>
+        <div class="audio-body">
+          <div class="audio-head">
+            <span class="audio-label">Day 14 Message</span>
+            <span class="audio-time"><span class="audio-cur">0:00</span> / <span class="audio-dur">--:--</span></span>
+          </div>
+          <div class="audio-title">Press play, then read along below</div>
+          <div class="audio-track"><div class="audio-fill"></div></div>
+        </div>
+        <audio preload="metadata" src="https://www.dropbox.com/scl/fi/jnvdhj6l8y3cinu4torzv/Day-14-recalibrate.mp3?rlkey=nik3o6rk6c20k0v4fdic1a803&raw=1"></audio>
+      </div>
+      <div class="body-copy">
+        <p>Yesterday you looked at your open centers, where you pick up energy from other people. The more aware you become of them, the more you release the pressure of needing to be a certain way in those centers.</p>
+        <p>Today we go to the piece that changes everything: your Authority. This is how you're designed to make decisions, and it's how your body, not your mind, tells you what's actually right for you.</p>
+        <p>Here's the thing. Your mind's job is to gather information and ask questions. It was never meant to make your decisions. That's your body's job. So much of the advice we're handed, "trust your gut," "follow your heart," "don't be so emotional," isn't right for everyone. Some of us are meant to decide in the moment. Some need to sleep on it and wait for emotional clarity. Some need to talk it out loud to hear ourselves. Some need to be in the right environment. Your Authority tells you which one is you.</p>
+      </div>
+      <div class="notice">
+        <div class="notice-label">Today's reminder</div>
+        <p>Surrender and trust your inner guidance. The more you do, the more aligned actions you take, and the more aligned actions you take, the closer you get to the life you desire. You are worthy of everything you desire.</p>
+      </div>
+      <div class="pullquote"><p>Your mind is for gathering information. Your body is for making the decision.</p></div>
+      <div class="body-copy">
+        <p>Look at your chart, find your Authority, and open the "Your Authority" tab to read yours. Then practice deciding from it for the rest of the challenge, and watch what happens.</p>
+      </div>`},
+    {id:"authority", label:"Your Authority", icon:"◇", content:`
+      <div class="body-copy">
+        <p>Your Authority is how your body is designed to make decisions, especially the big ones. It's based on which centers are defined in your chart. Find yours on your chart, then tap it below to read how to work with it. The more you trust it, the more ease and alignment you'll feel.</p>
+      </div>
+      <div class="center-entry">
+        <button class="center-head" data-center><span class="center-head-left"><span class="center-name">Emotional Authority</span><span class="center-theme">Defined Solar Plexus · wait for the wave</span></span><span class="center-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+        <div class="center-body">
+          <div class="center-govern"><strong>How to know it's yours:</strong> Your Solar Plexus is defined. You feel emotional waves through the day.</div>
+          <div class="center-desc">There's no truth in the now for you. For small things, take a moment and feel for the yes or no in your body. For bigger decisions, wait a day, sometimes two, and make sure you're not on a high wave or a low one. Decide from a place of being cool, calm, and collected. A clear yes, move on it. A no or not sure, that's a no or a not right now.</div>
+          <div class="center-mantra"><span>Practice</span>Sleep on the big ones. Clarity comes after the wave settles, not in the middle of it.</div>
+        </div>
+      </div>
+      <div class="center-entry">
+        <button class="center-head" data-center><span class="center-head-left"><span class="center-name">Sacral Authority</span><span class="center-theme">Defined Sacral · gut response, in the moment</span></span><span class="center-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+        <div class="center-body">
+          <div class="center-govern"><strong>How to know it's yours:</strong> You're a Generator or Manifesting Generator with a defined Sacral and no defined Solar Plexus.</div>
+          <div class="center-desc">Your truth lives in your gut, in the moment. It's that instant hell yes or hell no. Your Sacral responds best to yes/no questions, often with sounds, an uh-huh or an uhn-uh. If something excites you, go for it. If it doesn't, don't. It really is that simple.</div>
+          <div class="center-mantra"><span>Practice</span>Ask yourself yes/no questions and trust the very first gut response.</div>
+        </div>
+      </div>
+      <div class="center-entry">
+        <button class="center-head" data-center><span class="center-head-left"><span class="center-name">Splenic Authority</span><span class="center-theme">Defined Spleen · quiet intuition, speaks once</span></span><span class="center-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+        <div class="center-body">
+          <div class="center-govern"><strong>How to know it's yours:</strong> You're a Manifestor or Projector with a defined Spleen and no defined Sacral or emotional Solar Plexus.</div>
+          <div class="center-desc">The Spleen is the center of intuition, health, and fear, and it speaks to you once, then moves on. So presence is everything. Don't let your mind or the pressures of others take over, trust your body. The guidance might be a clear inner voice, or more of a feeling. Honor those instinctual nudges even when they aren't logical.</div>
+          <div class="center-mantra"><span>Practice</span>Stay present enough to catch the whisper. It won't repeat itself.</div>
+        </div>
+      </div>
+      <div class="center-entry">
+        <button class="center-head" data-center><span class="center-head-left"><span class="center-name">Ego / Heart Authority</span><span class="center-theme">Defined Heart · what do I truly want?</span></span><span class="center-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+        <div class="center-body">
+          <div class="center-govern"><strong>How to know it's yours:</strong> A rarer Authority, coming from the Heart/Will center.</div>
+          <div class="center-desc"><strong>Manifestors:</strong> Listen to what you say when you verbalize your wants, without controlling it. Your ego speaks the truth. You're designed to decide based on whether you selfishly want something. Do you want it? Are you motivated by it?<br><br><strong>Projectors:</strong> Wait for the invitation, it's crucial. Because this comes from a motor, you'll either have the heart-energy to do something or you won't. Be selfish when deciding: what do I want, what feels most me? If your heart isn't in it, it's not for you.</div>
+          <div class="center-mantra"><span>Practice</span>Ask "do I actually want this?" and let the honest answer lead.</div>
+        </div>
+      </div>
+      <div class="center-entry">
+        <button class="center-head" data-center><span class="center-head-left"><span class="center-name">Self-Projected Authority</span><span class="center-theme">Defined G-Center · hear yourself speak</span></span><span class="center-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+        <div class="center-body">
+          <div class="center-govern"><strong>How to know it's yours:</strong> You're a Projector with your G-Center connected to your Throat.</div>
+          <div class="center-desc">You have a strong sense of who you are and where you're going. You need to hear yourself speak to make decisions. Talk it out with safe people who understand you just need a sounding board, they don't need to give advice. You can also record yourself and listen back. You'll know if something's right by hearing your own voice say it.</div>
+          <div class="center-mantra"><span>Practice</span>Talk it through out loud. Your clarity is in your own voice.</div>
+        </div>
+      </div>
+      <div class="center-entry">
+        <button class="center-head" data-center><span class="center-head-left"><span class="center-name">Mental / Environmental Authority</span><span class="center-theme">Defined Head/Ajna only · environment matters</span></span><span class="center-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+        <div class="center-body">
+          <div class="center-govern"><strong>How to know it's yours:</strong> You have Head + Ajna defined (or with Throat), and nothing defined below the throat.</div>
+          <div class="center-desc">Your environment is everything, because you're so open below the throat. Wrong environment, wrong decision. If a place feels off, move somewhere that feels right and tune in there. You'll know something's right when it clicks and makes sense to you, whether or not it makes sense to anyone else. Talk it out to release the mental pressure, and watch your body's signals, it reacts instantly when something's off.</div>
+          <div class="center-mantra"><span>Practice</span>Get into the right environment first, then talk it out and feel what clicks.</div>
+        </div>
+      </div>
+      <div class="center-entry">
+        <button class="center-head" data-center><span class="center-head-left"><span class="center-name">Lunar Authority</span><span class="center-theme">Reflectors · wait a full cycle</span></span><span class="center-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></button>
+        <div class="center-body">
+          <div class="center-govern"><strong>How to know it's yours:</strong> You're a Reflector, with no defined centers.</div>
+          <div class="center-desc">You're ruled by the lunar cycle, about 28 days, so you need longer stretches for big decisions. Let the story of the cycle play out before deciding. For small things you won't wait a month, of course, but knowing how much your environment affects you helps. Give yourself permission to slow down and not let the world rush you.</div>
+          <div class="center-mantra"><span>Practice</span>Let big decisions breathe across a full cycle. Never let anyone rush you.</div>
+        </div>
+      </div>
+      <div class="ground-note">Not sure of your Authority? <a href="https://www.aurailia.com/human-design-free-guide" target="_blank" rel="noopener">Fill out your birth info here</a> and I'll send you your chart plus a guide to your energy type.</div>`},
+    {id:"practice", label:"The Practice", icon:"🌙", content:`
+      <div class="body-copy">
+        <p>Today you learn to make decisions the way your body is built to, and you give yourself a real tool for the hard moments.</p>
+      </div>
+      <ol class="ritual">
+        <li><span class="ritual-n">1</span><div><strong>Connect with your vision.</strong> First thing, spend a few minutes with the life you desire and the person you're becoming. Feel it in your body.</div></li>
+        <li><span class="ritual-n">2</span><div><strong>Gratitude.</strong> Write 5 things you're grateful for and why, with <em>thank you, thank you, thank you</em> after each.</div></li>
+        <li><span class="ritual-n">3</span><div><strong>Practice your Authority.</strong> Read your Authority in the tab above, then practice deciding from it for the rest of the challenge. Notice what shifts when you let your body lead instead of your mind.</div></li>
+        <li><span class="ritual-n">4</span><div><strong>Tap along for worthiness.</strong> Try the tapping practice below (EFT). Rate how you feel first, 0 to 10, with 10 being triggered and unworthy, 0 being grounded and worthy. Tap along, then rate again and feel the shift.</div></li>
+        <li><span class="ritual-n">5</span><div><strong>Keep your totem with you.</strong> When fear rises, transfer it and follow your Spleen ritual from Day 9.</div></li>
+        <li><span class="ritual-n">6</span><div><strong>Tonight, your gratitude.</strong> Think of the best thing that happened today and say <em>thank you, thank you, thank you</em>.</div></li>
+      </ol>
+      <div class="rampage-card">
+        <div class="rampage-label">▶ Tapping for Worthiness · EFT</div>
+        <div class="rampage-note">Tapping (the Emotional Freedom Technique) uses your fingertips on points on your head and chest while you focus on affirmations. It's a beautiful daily tool to shift your energy. Rate yourself 0 to 10 before and after to feel the change. This is Brad Yates' tapping video on YouTube.</div>
+        <a class="rampage-btn" href="https://youtu.be/pohdtwaRZyI" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+          Tap along on YouTube
+        </a>
+      </div>
+      <div class="ground-note">Videos for tapping in my own voice are coming soon. For now, tapping along with Brad is a wonderful place to start.</div>
+      <div class="share-note">If you feel called, <a href="https://www.skool.com/embody-wealth?c=a0afd40b879a407f8c686bc5a396fea0&s=newest-cm&fl=" target="_blank" rel="noopener">share your Authority and how it feels to decide from it inside the community</a>. I'd love to hear it.</div>`},
+    {id:"reflect", label:"Reflect", icon:"🪞", content:`
+      <div class="body-copy">
+        <p>Name your Authority and a decision you're going to practice making from it. Writing it down makes it real.</p>
+      </div>
+      <div class="prompt-card">
+        <div class="prompt-q">My Authority is... and here's a decision I'm going to make from it instead of from my mind:</div>
+        <textarea class="journal" data-journal="d14-authority" placeholder="Write it out. This saves on its own."></textarea>
+        <div class="journal-saved" data-saved="d14-authority"></div>
+      </div>
+      <div class="body-copy" style="margin-top:28px">
+        <p>And your 5 gratitudes for today, with a why for each.</p>
+      </div>
+      <div class="gratitude-journal">
+        <div class="grat-row"><span class="grat-n">1</span><div class="grat-fields"><input class="journal-line" data-journal="d14-g1" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d14-w1" placeholder="because..."></textarea></div></div>
+        <div class="grat-row"><span class="grat-n">2</span><div class="grat-fields"><input class="journal-line" data-journal="d14-g2" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d14-w2" placeholder="because..."></textarea></div></div>
+        <div class="grat-row"><span class="grat-n">3</span><div class="grat-fields"><input class="journal-line" data-journal="d14-g3" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d14-w3" placeholder="because..."></textarea></div></div>
+        <div class="grat-row"><span class="grat-n">4</span><div class="grat-fields"><input class="journal-line" data-journal="d14-g4" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d14-w4" placeholder="because..."></textarea></div></div>
+        <div class="grat-row"><span class="grat-n">5</span><div class="grat-fields"><input class="journal-line" data-journal="d14-g5" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d14-w5" placeholder="because..."></textarea></div></div>
+        <div class="journal-saved" data-saved="d14-g1"></div>
+      </div>`},
+    {id:"affirm", label:"Affirmation", icon:"✶", content:`
+      <div class="affirmation">
+        <p>I trust my inner guidance.</p>
+        <p>I follow what lights me up.</p>
+        <p class="affirm-seal">I am worthy of having everything I desire.</p>
+      </div>`}
+  ]
+};
+
 /* ---- WELCOME (Day 0) — the doorway before the path begins ---- */
 const WELCOME = {
   n:0, name:"Welcome", title:"Welcome In", isWelcome:true,
@@ -1826,7 +2165,7 @@ function findDay(n){ return n===0 ? WELCOME : flatDays.find(d=>d.n===n); }
      21 = everything unlocked
    Change this ONE number to release more days.
    ============================================================ */
-const UNLOCKED_THROUGH = 12;
+const UNLOCKED_THROUGH = 14;
 function isUnlocked(n){ return n===0 || n<=UNLOCKED_THROUGH; }
 
 
@@ -2132,6 +2471,14 @@ const NOTES_MAP = [
   {day:12, name:"Enough & Worthy", entries:[
     {type:"text", key:"d12-accomplishments", label:"Things I've accomplished"},
     {type:"gratitude", prefix:"d12", label:"Gratitude"}
+  ]},
+  {day:13, name:"Your Open Centers", entries:[
+    {type:"text", key:"d13-centers", label:"My open centers and what isn't mine"},
+    {type:"gratitude", prefix:"d13", label:"Gratitude"}
+  ]},
+  {day:14, name:"Your Authority", entries:[
+    {type:"text", key:"d14-authority", label:"My Authority and a decision from it"},
+    {type:"gratitude", prefix:"d14", label:"Gratitude"}
   ]}
 ];
 function notesHasContent(store){
@@ -2287,6 +2634,10 @@ function bindToggles(stage){
         });
       };
     });
+  });
+  // accordion: open-center entries (Day 13)
+  stage.querySelectorAll('.center-head[data-center]').forEach(head=>{
+    head.onclick=()=>{ head.closest('.center-entry').classList.toggle('open'); };
   });
 }
 

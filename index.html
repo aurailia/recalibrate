@@ -508,6 +508,66 @@ main.stage{
 }
 .offer-btn:hover{transform:translateY(-1px)}
 
+/* EFT tapping rating tool (Day 15) */
+.tap-rate{
+  background:linear-gradient(150deg, rgba(201,184,236,0.14), rgba(124,100,168,0.1));
+  border:1px solid rgba(201,184,236,0.3);border-radius:18px;padding:22px 24px;margin-bottom:20px;
+}
+.tap-rate-label{
+  font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;
+  color:var(--lavender-bright);margin-bottom:6px;
+}
+.tap-rate-q{font-family:var(--sans);font-size:15px;line-height:1.55;color:var(--text);margin-bottom:18px}
+.tap-slider-row{display:flex;align-items:center;gap:16px}
+.tap-slider{
+  flex:1 1 auto;-webkit-appearance:none;appearance:none;height:8px;border-radius:6px;
+  background:linear-gradient(90deg,#6f8f7a,#c9a86a,#c98080);outline:none;
+}
+.tap-slider::-webkit-slider-thumb{
+  -webkit-appearance:none;appearance:none;width:26px;height:26px;border-radius:50%;
+  background:#fff;border:3px solid #9d86c9;cursor:pointer;box-shadow:0 3px 10px rgba(0,0,0,0.35);
+}
+.tap-slider::-moz-range-thumb{
+  width:26px;height:26px;border-radius:50%;background:#fff;border:3px solid #9d86c9;cursor:pointer;
+}
+.tap-num{
+  flex:0 0 auto;width:56px;height:52px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-weight:600;font-size:26px;color:#fff;
+  background:rgba(157,134,201,0.35);border:1px solid rgba(201,184,236,0.4);
+}
+.tap-scale-ends{
+  display:flex;justify-content:space-between;margin-top:8px;
+  font-family:var(--sans);font-size:11.5px;color:var(--text-dim);
+}
+.tap-result{
+  margin-top:16px;padding:16px 18px;border-radius:12px;
+  background:rgba(155,134,201,0.18);border:1px solid rgba(201,184,236,0.3);
+  font-family:var(--sans);font-size:15px;line-height:1.55;color:#fff;display:none;
+}
+.tap-result.show{display:block}
+.tap-result strong{color:var(--lavender-bright)}
+
+/* tapping sequence rounds */
+.tap-round{
+  background:rgba(185,168,224,0.06);border:1px solid rgba(185,168,224,0.18);
+  border-radius:14px;padding:18px 20px;margin-bottom:14px;
+}
+.tap-round-title{
+  font-family:var(--serif);font-weight:600;font-size:19px;color:#fff;margin-bottom:4px;
+}
+.tap-round-sub{font-family:var(--sans);font-size:12.5px;color:var(--lavender-soft);margin-bottom:14px;font-style:italic}
+.tap-line{
+  display:flex;gap:12px;padding:8px 0;border-bottom:1px solid rgba(185,168,224,0.1);
+  font-family:var(--sans);font-size:15px;line-height:1.5;
+}
+.tap-line:last-child{border-bottom:none}
+.tap-point{
+  flex:0 0 118px;font-size:12px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;
+  color:var(--lavender);padding-top:2px;
+}
+.tap-words{flex:1 1 auto;color:var(--text)}
+
 /* open center entries (Day 13) — accordion */
 .center-entry{
   background:rgba(185,168,224,0.06);border:1px solid rgba(185,168,224,0.18);
@@ -2113,6 +2173,221 @@ PHASES[1].days[6] = {
   ]
 };
 
+/* ---- Day 15 — Money Is Energy (opens Week Three) ---- */
+PHASES[2].days[0] = {
+  n:15, name:"Money Is Energy",
+  title:"Money Is Energy",
+  sub:"Your money story, and the frequency that money actually answers to.",
+  tabs:[
+    {id:"teaching", label:"The Teaching", icon:"✦", content:`
+      <div class="audio-player">
+        <button class="play-btn" aria-label="Play message">${'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>'}</button>
+        <div class="audio-body">
+          <div class="audio-head">
+            <span class="audio-label">Day 15 Message</span>
+            <span class="audio-time"><span class="audio-cur">0:00</span> / <span class="audio-dur">--:--</span></span>
+          </div>
+          <div class="audio-title">Press play, then read along below</div>
+          <div class="audio-track"><div class="audio-fill"></div></div>
+        </div>
+        <audio preload="metadata" src="https://www.dropbox.com/scl/fi/pv62yuitxyxsgrhzdu6rh/Day-15-recalibrate.mp3?rlkey=heeycsbzeleoqm5b86htxl6se&raw=1"></audio>
+      </div>
+      <div class="body-copy">
+        <p>Final week. Fifteen days of showing up for yourself, and I hope you can feel the difference in your energy by now.</p>
+        <p>Look at what you've built. You connected to your highest timeline, cleared out the old weight, filled your cup with gratitude, met your younger self, and spent all of last week learning your energetic blueprint. Your centers, your Spleen, your Authority. Now we take all of it and point it at something specific: money, manifestation, and abundance.</p>
+        <p>But before the fun stuff, we talk about your money story. Because you can do every manifesting exercise out there, write the lists, say the affirmations, but if underneath it all you believe money is hard, or that wanting it makes you greedy, or that you have to suffer for it, that belief is what the Universe is actually hearing.</p>
+      </div>
+      <div class="notice">
+        <div class="notice-label">Money is energy</div>
+        <p>We were taught to think of money as a thing. Paper, numbers, something solid you either have or you don't. But money is energy. A frequency, like everything else. Your body, your thoughts, your emotions, all of it is energy in motion, and money is no different. It flows, it circulates, and it moves toward whatever it's a match for.</p>
+      </div>
+      <div class="pullquote"><p>Money isn't attracted to effort. Money is attracted to frequency.</p></div>
+      <div class="body-copy">
+        <p>That's why you can work yourself into the ground and still feel like you're chasing it. And why sometimes, when you finally relax and stop gripping so tight, money shows up out of nowhere. You've felt that. It isn't random. Your frequency shifted, and the energy could finally reach you.</p>
+        <p>The Universe matches your vibration. It doesn't respond to what you say you want, it responds to what you're actually broadcasting. So if you're in fear about money while asking for more of it, the fear is the signal. That's not a punishment, it's just how energy works. And once you know it, you can change the signal.</p>
+        <p>This is exactly why we spent two weeks raising your frequency. That work was never separate from your money. It was the foundation for it.</p>
+      </div>
+      <div class="notice">
+        <div class="notice-label">A note from me</div>
+        <p>I have always felt abundant. Even when my bank account was nearly at zero. Even when I lost my twenty-year corporate career and a high six-figure salary overnight. And here's what's interesting: during that time I was surrounded by people terrified about money, people who had a hundred thousand times more than I did. They had so much and lived in fear of losing it. I had almost nothing and felt held. That's the proof. The money in your account isn't what creates abundance. The frequency is.</p>
+      </div>
+      <div class="body-copy">
+        <p>And that fear you feel about money? It might not even be yours. Remember Day 13. If you have an open Solar Plexus, an open Root, or an open Spleen, you're picking up other people's money anxiety and amplifying it in your body like it belongs to you. Their fear becomes your fear, and you never question it, because it feels like it's coming from inside you.</p>
+      </div>`},
+    {id:"tapping", label:"Tapping", icon:"◇", content:`
+      <div class="body-copy">
+        <p>When money fear rises, this is what brings me back. We tap through the fear, come home to the present moment, and land on the words Louise Hay taught me to lean on.</p>
+        <p>Rate how you're feeling first, then tap along, then rate again. Feeling the shift in your own body is what makes you trust it.</p>
+      </div>
+      <div class="tap-rate">
+        <div class="tap-rate-label">Before you tap</div>
+        <div class="tap-rate-q">Think about money right now. Your account, your bills, whatever's been sitting in your chest. How big does the fear feel?</div>
+        <div class="tap-slider-row">
+          <input type="range" min="0" max="10" value="5" class="tap-slider" id="tapBefore">
+          <div class="tap-num" id="tapBeforeNum">5</div>
+        </div>
+        <div class="tap-scale-ends"><span>0 \u00b7 calm, grounded, safe</span><span>10 \u00b7 fear feels huge</span></div>
+      </div>
+      <div class="audio-player">
+        <button class="play-btn" aria-label="Play tapping">${'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>'}</button>
+        <div class="audio-body">
+          <div class="audio-head">
+            <span class="audio-label">Tapping \u00b7 Money Fear &amp; Safety</span>
+            <span class="audio-time"><span class="audio-cur">0:00</span> / <span class="audio-dur">--:--</span></span>
+          </div>
+          <div class="audio-title">Tap along with me</div>
+          <div class="audio-track"><div class="audio-fill"></div></div>
+        </div>
+        <audio preload="metadata" src="DAY15_TAP_URL"></audio>
+      </div>
+      <div class="ground-note">New to tapping? You'll tap gently with two fingers on each point, about seven taps, while you say the words. Follow along with me, and don't worry about getting it perfect. Your body knows what to do.</div>
+      <div class="tap-round">
+        <div class="tap-round-title">Setup</div>
+        <div class="tap-round-sub">Tapping the fleshy side of your hand (karate chop point)</div>
+        <div class="tap-line"><div class="tap-point">Karate chop</div><div class="tap-words">Even though I have this fear about money, I deeply and completely love and accept myself.</div></div>
+        <div class="tap-line"><div class="tap-point">Karate chop</div><div class="tap-words">Even though there's this tightness when I think about money, and part of me is bracing for something bad, I choose to be gentle with myself right now.</div></div>
+        <div class="tap-line"><div class="tap-point">Karate chop</div><div class="tap-words">Even though I've been carrying this fear, and maybe it isn't even mine, I love and accept myself, and I'm open to feeling safe.</div></div>
+      </div>
+      <div class="tap-round">
+        <div class="tap-round-title">Round One</div>
+        <div class="tap-round-sub">Naming what's there</div>
+        <div class="tap-line"><div class="tap-point">Eyebrow</div><div class="tap-words">This money fear.</div></div>
+        <div class="tap-line"><div class="tap-point">Side of eye</div><div class="tap-words">It sits right here in my body.</div></div>
+        <div class="tap-line"><div class="tap-point">Under eye</div><div class="tap-words">This tightness when I look at my account.</div></div>
+        <div class="tap-line"><div class="tap-point">Under nose</div><div class="tap-words">This bracing for the worst.</div></div>
+        <div class="tap-line"><div class="tap-point">Chin</div><div class="tap-words">My mind loves to build the story.</div></div>
+        <div class="tap-line"><div class="tap-point">Collarbone</div><div class="tap-words">What if it runs out. What if I can't. What if it all falls apart.</div></div>
+        <div class="tap-line"><div class="tap-point">Under arm</div><div class="tap-words">I've been spiraling into a future that hasn't even happened.</div></div>
+        <div class="tap-line"><div class="tap-point">Top of head</div><div class="tap-words">All this fear about money.</div></div>
+      </div>
+      <div class="tap-round">
+        <div class="tap-round-title">Round Two</div>
+        <div class="tap-round-sub">Whose fear is this?</div>
+        <div class="tap-line"><div class="tap-point">Eyebrow</div><div class="tap-words">And maybe some of this isn't even mine.</div></div>
+        <div class="tap-line"><div class="tap-point">Side of eye</div><div class="tap-words">I've been absorbing everyone else's money fear.</div></div>
+        <div class="tap-line"><div class="tap-point">Under eye</div><div class="tap-words">Their worry. Their scarcity. Their panic.</div></div>
+        <div class="tap-line"><div class="tap-point">Under nose</div><div class="tap-words">I've been carrying it like it belongs to me.</div></div>
+        <div class="tap-line"><div class="tap-point">Chin</div><div class="tap-words">But I get to put down what was never mine.</div></div>
+        <div class="tap-line"><div class="tap-point">Collarbone</div><div class="tap-words">I can feel it, and I can let it move through.</div></div>
+        <div class="tap-line"><div class="tap-point">Under arm</div><div class="tap-words">I release what isn't mine to carry.</div></div>
+        <div class="tap-line"><div class="tap-point">Top of head</div><div class="tap-words">I'm allowed to set it down.</div></div>
+      </div>
+      <div class="tap-round">
+        <div class="tap-round-title">Round Three</div>
+        <div class="tap-round-sub">Coming back to now</div>
+        <div class="tap-line"><div class="tap-point">Eyebrow</div><div class="tap-words">So let me come back to right now.</div></div>
+        <div class="tap-line"><div class="tap-point">Side of eye</div><div class="tap-words">Not next month. Not the worst case.</div></div>
+        <div class="tap-line"><div class="tap-point">Under eye</div><div class="tap-words">Just this moment.</div></div>
+        <div class="tap-line"><div class="tap-point">Under nose</div><div class="tap-words">In this moment, I have food.</div></div>
+        <div class="tap-line"><div class="tap-point">Chin</div><div class="tap-words">In this moment, I have a roof over my head.</div></div>
+        <div class="tap-line"><div class="tap-point">Collarbone</div><div class="tap-words">In this moment, I am loved.</div></div>
+        <div class="tap-line"><div class="tap-point">Under arm</div><div class="tap-words">In this moment, I have everything I need.</div></div>
+        <div class="tap-line"><div class="tap-point">Top of head</div><div class="tap-words">Right now, I am safe.</div></div>
+      </div>
+      <div class="tap-round">
+        <div class="tap-round-title">Round Four</div>
+        <div class="tap-round-sub">The Louise Hay mantra. Really let yourself feel this one.</div>
+        <div class="tap-line"><div class="tap-point">Eyebrow</div><div class="tap-words">All is well.</div></div>
+        <div class="tap-line"><div class="tap-point">Side of eye</div><div class="tap-words">I am good.</div></div>
+        <div class="tap-line"><div class="tap-point">Under eye</div><div class="tap-words">Everything happens for my highest good.</div></div>
+        <div class="tap-line"><div class="tap-point">Under nose</div><div class="tap-words">Out of this experience, only good will come.</div></div>
+        <div class="tap-line"><div class="tap-point">Chin</div><div class="tap-words">I am safe.</div></div>
+        <div class="tap-line"><div class="tap-point">Collarbone</div><div class="tap-words">I am safe.</div></div>
+        <div class="tap-line"><div class="tap-point">Under arm</div><div class="tap-words">I am safe.</div></div>
+        <div class="tap-line"><div class="tap-point">Top of head</div><div class="tap-words">All is well, and I am safe.</div></div>
+      </div>
+      <div class="tap-round">
+        <div class="tap-round-title">Round Five</div>
+        <div class="tap-round-sub">The evidence</div>
+        <div class="tap-line"><div class="tap-point">Eyebrow</div><div class="tap-words">And I have proof.</div></div>
+        <div class="tap-line"><div class="tap-point">Side of eye</div><div class="tap-words">Every hard thing I've faced, I got through.</div></div>
+        <div class="tap-line"><div class="tap-point">Under eye</div><div class="tap-words">Every time I thought I couldn't, I did.</div></div>
+        <div class="tap-line"><div class="tap-point">Under nose</div><div class="tap-words">I have always found a way.</div></div>
+        <div class="tap-line"><div class="tap-point">Chin</div><div class="tap-words">I am resourceful. I am capable.</div></div>
+        <div class="tap-line"><div class="tap-point">Collarbone</div><div class="tap-words">Whatever comes, I will be okay.</div></div>
+        <div class="tap-line"><div class="tap-point">Under arm</div><div class="tap-words">Because I always have been.</div></div>
+        <div class="tap-line"><div class="tap-point">Top of head</div><div class="tap-words">I trust myself. I trust the Universe.</div></div>
+      </div>
+      <div class="tap-round">
+        <div class="tap-round-title">Round Six</div>
+        <div class="tap-round-sub">Opening to abundance</div>
+        <div class="tap-line"><div class="tap-point">Eyebrow</div><div class="tap-words">And now I make room for more.</div></div>
+        <div class="tap-line"><div class="tap-point">Side of eye</div><div class="tap-words">Money can come to me with ease.</div></div>
+        <div class="tap-line"><div class="tap-point">Under eye</div><div class="tap-words">I don't have to suffer for it.</div></div>
+        <div class="tap-line"><div class="tap-point">Under nose</div><div class="tap-words">I don't have to earn my worth.</div></div>
+        <div class="tap-line"><div class="tap-point">Chin</div><div class="tap-words">I am worthy of receiving, just because I am.</div></div>
+        <div class="tap-line"><div class="tap-point">Collarbone</div><div class="tap-words">I am a match for abundance.</div></div>
+        <div class="tap-line"><div class="tap-point">Under arm</div><div class="tap-words">The Universe is always supporting me.</div></div>
+        <div class="tap-line"><div class="tap-point">Top of head</div><div class="tap-words">All is well. I am safe. And I am abundant.</div></div>
+      </div>
+      <div class="body-copy">
+        <p>Take a deep breath in, and let it go. One more. Breathe in, and release.</p>
+      </div>
+      <div class="tap-rate">
+        <div class="tap-rate-label">After tapping</div>
+        <div class="tap-rate-q">Now check in again. Think about that same thing you were holding. Where is it now?</div>
+        <div class="tap-slider-row">
+          <input type="range" min="0" max="10" value="5" class="tap-slider" id="tapAfter">
+          <div class="tap-num" id="tapAfterNum">5</div>
+        </div>
+        <div class="tap-scale-ends"><span>0 \u00b7 calm, grounded, safe</span><span>10 \u00b7 fear feels huge</span></div>
+        <div class="tap-result" id="tapResult"></div>
+      </div>
+      <div class="ground-note">If the number is still high, nothing's wrong. Tap through it again. Sometimes it takes a couple of rounds, and sometimes something deeper surfaces that wants your attention. Be gentle with yourself. Come back to this any time the fear rises. It's yours now.</div>`},
+    {id:"practice", label:"The Practice", icon:"🌙", content:`
+      <div class="body-copy">
+        <p>Today we work on the money story underneath everything, first with tapping, then by going deeper than the conscious mind can reach.</p>
+      </div>
+      <ol class="ritual">
+        <li><span class="ritual-n">1</span><div><strong>Tap through the money fear.</strong> Head to the Tapping tab, rate yourself, tap along with me, and rate again. Notice the shift in your body.</div></li>
+        <li><span class="ritual-n">2</span><div><strong>Listen to the Millionaire hypnosis.</strong> Below. This one goes underneath your conscious mind and starts reprogramming the money beliefs that have been quietly running for years. That's where your real money story lives.</div></li>
+        <li><span class="ritual-n">3</span><div><strong>Gratitude.</strong> Write 5 things you're grateful for and why, with <em>thank you, thank you, thank you</em> after each.</div></li>
+        <li><span class="ritual-n">4</span><div><strong>Keep your totem with you.</strong> When fear rises, transfer it and follow your Spleen ritual from Day 9.</div></li>
+        <li><span class="ritual-n">5</span><div><strong>Tonight, your gratitude.</strong> Think of the best thing that happened today and say <em>thank you, thank you, thank you</em>.</div></li>
+      </ol>
+      <div class="audio-player">
+        <button class="play-btn" aria-label="Play hypnosis">${'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>'}</button>
+        <div class="audio-body">
+          <div class="audio-head">
+            <span class="audio-label">Millionaire Hypnosis</span>
+            <span class="audio-time"><span class="audio-cur">0:00</span> / <span class="audio-dur">--:--</span></span>
+          </div>
+          <div class="audio-title">Reprogram the money story underneath</div>
+          <div class="audio-track"><div class="audio-fill"></div></div>
+        </div>
+        <audio preload="metadata" src="https://www.dropbox.com/scl/fi/acts6jn0i55p431s0ppk4/millionaire-hypnosis.mp3?rlkey=7k2st6lfptdh1dfff3mly7bul&raw=1"></audio>
+      </div>
+      <div class="share-note">If you feel called, <a href="https://www.skool.com/embody-wealth?c=a0afd40b879a407f8c686bc5a396fea0&s=newest-cm&fl=" target="_blank" rel="noopener">share a money belief you're ready to question inside the community</a>. Half of releasing a story is seeing it clearly.</div>`},
+    {id:"reflect", label:"Reflect", icon:"🪞", content:`
+      <div class="body-copy">
+        <p>Let's look at the money story you've been carrying. Be honest, no one's reading this but you.</p>
+      </div>
+      <div class="prompt-card">
+        <div class="prompt-q">What did I learn about money growing up, and which of those beliefs am I still carrying? Which ones might not even be mine?</div>
+        <textarea class="journal" data-journal="d15-story" placeholder="Write it out. This saves on its own."></textarea>
+        <div class="journal-saved" data-saved="d15-story"></div>
+      </div>
+      <div class="body-copy" style="margin-top:28px">
+        <p>And your 5 gratitudes for today, with a why for each.</p>
+      </div>
+      <div class="gratitude-journal">
+        <div class="grat-row"><span class="grat-n">1</span><div class="grat-fields"><input class="journal-line" data-journal="d15-g1" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d15-w1" placeholder="because..."></textarea></div></div>
+        <div class="grat-row"><span class="grat-n">2</span><div class="grat-fields"><input class="journal-line" data-journal="d15-g2" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d15-w2" placeholder="because..."></textarea></div></div>
+        <div class="grat-row"><span class="grat-n">3</span><div class="grat-fields"><input class="journal-line" data-journal="d15-g3" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d15-w3" placeholder="because..."></textarea></div></div>
+        <div class="grat-row"><span class="grat-n">4</span><div class="grat-fields"><input class="journal-line" data-journal="d15-g4" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d15-w4" placeholder="because..."></textarea></div></div>
+        <div class="grat-row"><span class="grat-n">5</span><div class="grat-fields"><input class="journal-line" data-journal="d15-g5" placeholder="I'm grateful for..."><textarea class="journal grat-why" data-journal="d15-w5" placeholder="because..."></textarea></div></div>
+        <div class="journal-saved" data-saved="d15-g1"></div>
+      </div>`},
+    {id:"affirm", label:"Affirmation", icon:"✶", content:`
+      <div class="affirmation">
+        <p>Money is energy, and I am a match for it.</p>
+        <p>All is well. I am good.</p>
+        <p>Out of this experience, only good will come.</p>
+        <p class="affirm-seal">I am safe. I am safe. I am safe.</p>
+      </div>`}
+  ]
+};
+
 /* ---- WELCOME (Day 0) — the doorway before the path begins ---- */
 const WELCOME = {
   n:0, name:"Welcome", title:"Welcome In", isWelcome:true,
@@ -2165,7 +2440,7 @@ function findDay(n){ return n===0 ? WELCOME : flatDays.find(d=>d.n===n); }
      21 = everything unlocked
    Change this ONE number to release more days.
    ============================================================ */
-const UNLOCKED_THROUGH = 14;
+const UNLOCKED_THROUGH = 15;
 function isUnlocked(n){ return n===0 || n<=UNLOCKED_THROUGH; }
 
 
@@ -2479,6 +2754,10 @@ const NOTES_MAP = [
   {day:14, name:"Your Authority", entries:[
     {type:"text", key:"d14-authority", label:"My Authority and a decision from it"},
     {type:"gratitude", prefix:"d14", label:"Gratitude"}
+  ]},
+  {day:15, name:"Money Is Energy", entries:[
+    {type:"text", key:"d15-story", label:"My money story"},
+    {type:"gratitude", prefix:"d15", label:"Gratitude"}
   ]}
 ];
 function notesHasContent(store){
@@ -2639,6 +2918,31 @@ function bindToggles(stage){
   stage.querySelectorAll('.center-head[data-center]').forEach(head=>{
     head.onclick=()=>{ head.closest('.center-entry').classList.toggle('open'); };
   });
+  // EFT tapping rating sliders (Day 15)
+  const before=stage.querySelector('#tapBefore'), after=stage.querySelector('#tapAfter');
+  if(before&&after){
+    const bNum=stage.querySelector('#tapBeforeNum'), aNum=stage.querySelector('#tapAfterNum');
+    const result=stage.querySelector('#tapResult');
+    let touchedAfter=false;
+    const update=()=>{
+      const b=+before.value, a=+after.value;
+      if(bNum) bNum.textContent=b;
+      if(aNum) aNum.textContent=a;
+      if(!touchedAfter||!result) return;
+      const drop=b-a;
+      let msg;
+      if(drop>=5) msg='<strong>You went from '+b+' to '+a+'.</strong> That is a big shift. Feel that in your body, that is your nervous system letting go.';
+      else if(drop>=2) msg='<strong>You went from '+b+' to '+a+'.</strong> That is real. Even a couple of points means something moved.';
+      else if(drop>0) msg='<strong>You went from '+b+' to '+a+'.</strong> A small shift is still a shift. Tap through it again if you want to go further.';
+      else if(drop===0) msg='<strong>Still at '+a+'.</strong> Nothing is wrong. Sometimes it takes another round, or something deeper is asking for your attention. Be gentle with yourself.';
+      else msg='<strong>It went up to '+a+'.</strong> That happens when something real surfaces. Keep tapping and let it move. You are safe.';
+      result.innerHTML=msg;
+      result.classList.add('show');
+    };
+    before.addEventListener('input',update);
+    after.addEventListener('input',()=>{ touchedAfter=true; update(); });
+    update();
+  }
 }
 
 function footNav(d){

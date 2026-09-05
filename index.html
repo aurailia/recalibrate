@@ -2658,6 +2658,49 @@ PHASES[2].days[3] = {
   ]
 };
 
+/* ---- Day 19 — Just BE (second rest day, spacious) ---- */
+PHASES[2].days[4] = {
+  n:19, name:"Just BE",
+  title:"Just BE",
+  sub:"Nothing to solve. Nothing to figure out. Nothing to fix.",
+  tabs:[
+    {id:"teaching", label:"The Message", icon:"✦", content:`
+      <div class="body-copy">
+        <p>Today, just be.</p>
+        <p>Building daily habits that raise your frequency and keep you in gratitude matters. You've been doing that beautifully. But releasing, letting go, and trusting matter just as much. That's why we take days like this.</p>
+        <p>So let go of the lists. Let go of the tools. Let go of the desire list and the check and the tapping and all of it, just for today. And simply be in the moment.</p>
+      </div>
+      <div class="notice">
+        <div class="notice-label">Today's reminder</div>
+        <p>Today I stand in the knowing and the energy that there is nothing I need to solve, nothing I need to figure out, nothing I need to fix.</p>
+      </div>
+      <div class="pullquote"><p>Trusting is just as important as doing. Today, you get to trust.</p></div>`},
+    {id:"practice", label:"Today", icon:"🌙", content:`
+      <div class="body-copy">
+        <p>There's nothing for you to do today. Relax and be in the moment as much as you can. Let go of the have-tos and the shoulds. Just for today, take a break.</p>
+        <p>Be present, and feel all the abundance that's already around you. Look at the leaves on the trees. Look up at the infinite sky. Notice how much there is of everything, how endlessly the world gives without being asked. That's the same abundance you've been calling in all week. It was always here.</p>
+        <p>If you feel called, start your day with the Abraham Hicks Morning Rampage. I love beginning with it even on my being days. But only if it feels good. Nothing today is a should.</p>
+      </div>
+      <div class="rampage-card">
+        <div class="rampage-label">▶ Abraham Hicks · Morning Rampage</div>
+        <div class="rampage-note">Only if you feel called. This is Abraham Hicks' recording on YouTube.</div>
+        <a class="rampage-btn" href="https://youtu.be/FmczMP1gQzk" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+          Play the Morning Rampage on YouTube
+        </a>
+      </div>
+      <div class="ground-note">Surrendering is part of the work, not a break from it. The letting go is what makes room for everything you've been calling in.</div>
+      <div class="share-note">If you feel called, <a href="https://www.skool.com/embody-wealth?c=a0afd40b879a407f8c686bc5a396fea0&s=newest-cm&fl=" target="_blank" rel="noopener">tell us how the challenge has been going for you inside the community</a>. No pressure. Only if it feels good today.</div>`},
+    {id:"affirm", label:"Affirmation", icon:"✶", content:`
+      <div class="affirmation">
+        <p>There is nothing I need to solve.</p>
+        <p>Nothing I need to figure out. Nothing I need to fix.</p>
+        <p>The abundance is already all around me.</p>
+        <p class="affirm-seal">I let go, and I simply be.</p>
+      </div>`}
+  ]
+};
+
 /* ---- WELCOME (Day 0) — the doorway before the path begins ---- */
 const WELCOME = {
   n:0, name:"Welcome", title:"Welcome In", isWelcome:true,
@@ -2710,7 +2753,7 @@ function findDay(n){ return n===0 ? WELCOME : flatDays.find(d=>d.n===n); }
      21 = everything unlocked
    Change this ONE number to release more days.
    ============================================================ */
-const UNLOCKED_THROUGH = 17;
+const UNLOCKED_THROUGH = 19;
 function isUnlocked(n){ return n===0 || n<=UNLOCKED_THROUGH; }
 
 
